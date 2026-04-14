@@ -1,0 +1,36 @@
+{
+  "minStudentsPerClass": 50,
+  "classSplitThreshold": 60,
+  "classSplitSize": 40,
+  "commissionRate": 0.15,
+  "startupSessions": 4,
+  "sessionDurationMin": 90,
+  "yopougon": {
+    "depistage": { "inscription": 5000, "label": "Dépistage des lacunes" },
+    "conscientisation": { "inscription": 2000, "label": "Conscientisation (conférence)" },
+    "techniques": { "inscription": 5000, "nbSeances": 2, "label": "Techniques d'étude & Emploi du temps" },
+    "remediation": {
+      "inscription": 10000, "seance": 2500, "startupCost": 20000,
+      "label": "Correction des lacunes (Lecture / Dictée / Maths)",
+      "note": "La formation en lecture, dictée et mathématiques ne sont pas un package. Ce sont des formations séparées."
+    }
+  },
+  "horsYopougon": {
+    "depistage": { "inscription": 5000, "label": "Dépistage des lacunes" },
+    "conscientisation": { "inscription": 3000, "label": "Conscientisation (conférence)" },
+    "techniques": { "inscription": 10000, "nbSeances": 2, "label": "Techniques d'étude & Emploi du temps" },
+    "remediation": {
+      "inscription": 10000, "seance": 2500, "startupCost": 20000,
+      "label": "Correction des lacunes (Lecture / Dictée / Maths)",
+      "note": "La formation en lecture, dictée et mathématiques ne sont pas un package. Ce sont des formations isolées."
+    }
+  },
+  "depistagePrivee": {
+    "costPerStudent": 5000,
+    "label": "Dépistage école privée"
+  },
+  "excellenceProgram": {
+    "yopougon": { "costPerStudentPerYear": 20000, "label": "Accompagnement du collège à l'excellence — Yopougon" },
+    "horsYopougon": { "costPerStudentPerYear": 50000, "label": "Accompagnement du collège à l'excellence — Hors Yopougon" }
+  }
+}

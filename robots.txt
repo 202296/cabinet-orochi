@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Block access to data files (JSON)
+Disallow: /data/
+# Block backups and dev files
+Disallow: /backups/
+Disallow: /.vscode/
+
+Sitemap: https://www.cabinetoroochi.ci/sitemap.xml

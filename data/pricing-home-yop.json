@@ -1,0 +1,89 @@
+{
+  "location": "yopougon",
+  "label": "À Domicile — Yopougon",
+  "currency": "FCFA",
+  "services": [
+    {
+      "id": "depistage",
+      "label": "Dépistage des lacunes",
+      "inscription": 10000,
+      "seance": null,
+      "nbSeances": 1,
+      "transport": 5000,
+      "totalSeance": 15000,
+      "discount": false
+    },
+    {
+      "id": "bilan",
+      "label": "Bilan de conscience",
+      "inscription": 20000,
+      "inscriptionExtra": 10000,
+      "seance": null,
+      "nbSeances": 2,
+      "transport": 5000,
+      "discount": false
+    },
+    {
+      "id": "conscientisation",
+      "label": "Conscientisation (conférence)",
+      "inscription": 30000,
+      "inscriptionExtra": 15000,
+      "seance": null,
+      "nbSeances": 1,
+      "transport": 10000,
+      "discount": false
+    },
+    {
+      "id": "techniques",
+      "label": "Techniques d'étude & Emploi du temps",
+      "inscription": 30000,
+      "inscriptionExtra": 15000,
+      "seance": null,
+      "nbSeances": 2,
+      "transport": 5000,
+      "discount": false
+    },
+    {
+      "id": "lecture",
+      "label": "Formation en lecture",
+      "inscription": 20000,
+      "seance": 10000,
+      "nbSeances": 13,
+      "transport": 5000,
+      "totalSeance": 15000,
+      "discountRate": 0.25,
+      "discountedSeance": 7500,
+      "discountedTotal": 12500,
+      "discount": true,
+      "forfaitSessions": 6
+    },
+    {
+      "id": "dictee",
+      "label": "Perfectionnement en dictée (français)",
+      "inscription": 20000,
+      "seance": 10000,
+      "nbSeances": 25,
+      "transport": 5000,
+      "totalSeance": 15000,
+      "discountRate": 0.25,
+      "discountedSeance": 7500,
+      "discountedTotal": 12500,
+      "discount": true,
+      "forfaitSessions": 6
+    },
+    {
+      "id": "maths",
+      "label": "Remédiation en mathématiques",
+      "inscription": 20000,
+      "seance": 10000,
+      "nbSeances": 24,
+      "transport": 5000,
+      "totalSeance": 15000,
+      "discountRate": 0.25,
+      "discountedSeance": 7500,
+      "discountedTotal": 12500,
+      "discount": true,
+      "forfaitSessions": 6
+    }
+  ]
+}

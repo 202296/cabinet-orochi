@@ -1,0 +1,93 @@
+{
+  "location": "cabinet",
+  "label": "Au Cabinet Orochi",
+  "currency": "FCFA",
+  "services": [
+    {
+      "id": "depistage",
+      "label": "Dépistage des lacunes",
+      "inscription": 3000,
+      "seance": null,
+      "nbSeances": 1,
+      "transport": 0,
+      "discount": false
+    },
+    {
+      "id": "bilan",
+      "label": "Bilan de conscience",
+      "inscription": 7500,
+      "seance": null,
+      "nbSeances": 1,
+      "transport": 0,
+      "discount": false
+    },
+    {
+      "id": "conscientisation",
+      "label": "Conscientisation (conférence)",
+      "inscription": 2500,
+      "seance": null,
+      "nbSeances": 1,
+      "transport": 0,
+      "discount": false
+    },
+    {
+      "id": "techniques",
+      "label": "Techniques d'étude & Emploi du temps",
+      "inscription": 5000,
+      "seance": null,
+      "nbSeances": 2,
+      "transport": 0,
+      "discount": false
+    },
+    {
+      "id": "lecture",
+      "label": "Formation en lecture",
+      "inscriptionEleve": 10000,
+      "inscriptionNonEleve": 20000,
+      "seanceEleve": 2500,
+      "seanceNonEleve": 5000,
+      "nbSeances": 13,
+      "transport": 0,
+      "discount": false
+    },
+    {
+      "id": "dictee",
+      "label": "Perfectionnement en dictée (français)",
+      "inscription": 5000,
+      "seanceEleve": 2500,
+      "seanceNonEleve": 5000,
+      "nbSeances": 25,
+      "transport": 0,
+      "discount": false
+    },
+    {
+      "id": "maths",
+      "label": "Remédiation en mathématiques",
+      "inscription": 5000,
+      "seanceEleve": 2500,
+      "seanceNonEleve": 5000,
+      "nbSeances": 24,
+      "transport": 0,
+      "discount": false
+    },
+    {
+      "id": "anglais",
+      "label": "Perfectionnement en anglais",
+      "inscription": 0,
+      "seanceEleve": 2500,
+      "seanceNonEleve": 5000,
+      "nbSeances": null,
+      "transport": 0,
+      "discount": false
+    },
+    {
+      "id": "metier",
+      "label": "Rencontre de mon métier de rêve",
+      "inscription": 30000,
+      "seance": null,
+      "nbSeances": 1,
+      "transport": 0,
+      "discount": false
+    }
+  ]
+}

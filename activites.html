@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="assets/images/logo.jpeg" type="image/jpeg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Découvrez toutes les activités du Cabinet Orochi : séances de formation, ateliers de conscientisation, événements scolaires, conférences parentales et journées d'orientation en Côte d'Ivoire." />
+    <title>Activités — Cabinet Orochi</title>
+    <link rel="canonical" href="https://www.cabinetoroochi.ci/activites" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Cabinet Orochi" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Cabinet Orochi" />
+    <meta property="og:title" content="Activités — Cabinet Orochi" />
+    <meta property="og:description" content="Séances de formation, ateliers de conscientisation, conférences parentales, journées d'orientation — toutes les activités du Cabinet Orochi." />
+    <meta property="og:url" content="https://www.cabinetoroochi.ci/activites" />
+    <meta property="og:locale" content="fr_CI" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <style>
+      /* =============================================
+         ACTIVITÉS PAGE — SPECIFIC STYLES
+         ============================================= */
+
+      /* Filter bar */
+      .filter-bar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        margin-bottom: 48px;
+      }
+      .filter-bar .filter-label {
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: var(--gray);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-right: 6px;
+        flex-shrink: 0;
+      }
+      .filter-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 18px;
+        border-radius: 50px;
+        border: 2px solid var(--light-gray);
+        background: var(--white);
+        color: var(--gray);
+        font-size: 0.85rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        font-family: var(--font-main);
+      }
+      .filter-btn:hover { border-color: var(--gold); color: var(--gold); }
+      .filter-btn.active {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: var(--white);
+        box-shadow: 0 4px 12px rgba(244,121,32,0.3);
+      }
+
+      /* Activity count badge */
+      .filter-count {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.25);
+        font-size: 0.7rem;
+        font-weight: 700;
+        line-height: 1;
+      }
+      .filter-btn:not(.active) .filter-count {
+        background: var(--off-white);
+        color: var(--gray);
+      }
+
+      /* Featured activity hero card */
+      .featured-activity {
+        background: var(--primary);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 64px;
+        box-shadow: var(--shadow-lg);
+        min-height: 360px;
+      }
+      .featured-activity-img {
+        background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        position: relative;
+        overflow: hidden;
+        min-height: 280px;
+      }
+      .featured-activity-img::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse at center, rgba(244,121,32,0.15) 0%, transparent 70%);
+      }
+      .featured-activity-img .feat-emoji { font-size: 5rem; position: relative; z-index: 1; }
+      .featured-activity-img .feat-img-label {
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.35);
+        position: relative;
+        z-index: 1;
+      }
+      .featured-activity-badge {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: var(--gold);
+        color: var(--white);
+        font-size: 0.7rem;
+        font-weight: 700;
+        padding: 5px 14px;
+        border-radius: 50px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        z-index: 2;
+      }
+      .featured-activity-content {
+        padding: 48px 44px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .featured-activity-meta {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 20px;
+      }
+      .feat-meta-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.78rem;
+        color: rgba(255,255,255,0.6);
+        font-weight: 500;
+      }
+      .feat-meta-chip .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+      .featured-activity-content h2 {
+        color: var(--white);
+        font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+        line-height: 1.3;
+        margin-bottom: 16px;
+      }
+      .featured-activity-content h2 span { color: var(--gold); }
+      .featured-activity-content p {
+        color: rgba(255,255,255,0.7);
+        font-size: 0.97rem;
+        line-height: 1.75;
+        margin-bottom: 28px;
+      }
+      .featured-activity-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 28px;
+      }
+      .act-tag {
+        background: rgba(244,121,32,0.15);
+        border: 1px solid rgba(244,121,32,0.3);
+        color: var(--gold);
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 4px 12px;
+        border-radius: 50px;
+      }
+
+      /* Activity grid cards */
+      .activities-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+        margin-bottom: 64px;
+      }
+      .activity-card {
+        background: var(--white);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition);
+        border: 1px solid var(--off-white);
+        display: flex;
+        flex-direction: column;
+      }
+      .activity-card:hover { box-shadow: var(--shadow-md); transform: translateY(-5px); }
+      .activity-card.hidden { display: none; }
+
+      .act-card-img {
+        aspect-ratio: 16/9;
+        background: linear-gradient(135deg, var(--off-white), var(--light-gray));
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        position: relative;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+      .act-card-img .act-emoji { font-size: 3rem; }
+      .act-card-img .act-img-label {
+        font-size: 0.65rem;
+        font-weight: 500;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: #9aa0a8;
+      }
+      .act-card-img::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0,0,0,0.08) 0%, transparent 60%);
+      }
+      .act-category-badge {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        font-size: 0.68rem;
+        font-weight: 700;
+        padding: 4px 12px;
+        border-radius: 50px;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        z-index: 2;
+        color: var(--white);
+      }
+      .badge-formation   { background: var(--primary); }
+      .badge-atelier     { background: #6c63ff; }
+      .badge-conference  { background: var(--gold); }
+      .badge-orientation { background: #20b2aa; }
+      .badge-partenariat { background: #e74c3c; }
+      .badge-excellence  { background: #f39c12; }
+
+      .act-card-body {
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+      .act-card-meta {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.75rem;
+        color: var(--gray);
+        margin-bottom: 12px;
+      }
+      .act-card-meta .sep { width: 3px; height: 3px; border-radius: 50%; background: var(--light-gray); }
+      .act-card-body h4 {
+        color: var(--primary);
+        font-size: 1.02rem;
+        line-height: 1.4;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+      .act-card-body p {
+        font-size: 0.88rem;
+        color: var(--gray);
+        line-height: 1.65;
+        margin-bottom: 16px;
+        flex: 1;
+      }
+      .act-card-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 16px;
+        border-top: 1px solid var(--off-white);
+        margin-top: auto;
+      }
+      .act-info-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.77rem;
+        color: var(--gray);
+        font-weight: 500;
+      }
+      .act-info-pill .icon { color: var(--gold); }
+      .act-read-more {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--gold);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+      .act-read-more:hover { gap: 10px; }
+
+      /* Timeline section */
+      .timeline-section {
+        background: var(--primary);
+        padding: 96px 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .timeline-section::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        pointer-events: none;
+      }
+      .timeline-header { text-align: center; margin-bottom: 64px; position: relative; z-index: 1; }
+      .timeline-header .eyebrow { color: var(--gold); background: rgba(244,121,32,0.15); }
+      .timeline-header h2 { color: var(--white); margin-top: 14px; }
+      .timeline-header p { color: rgba(255,255,255,0.6); }
+
+      .timeline {
+        position: relative;
+        max-width: 860px;
+        margin: 0 auto;
+        z-index: 1;
+      }
+      .timeline::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: rgba(244,121,32,0.25);
+        transform: translateX(-50%);
+      }
+      .timeline-item {
+        display: grid;
+        grid-template-columns: 1fr 56px 1fr;
+        gap: 0;
+        align-items: start;
+        margin-bottom: 48px;
+        position: relative;
+      }
+      .timeline-item:last-child { margin-bottom: 0; }
+
+      .tl-content {
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: var(--radius-lg);
+        padding: 24px 28px;
+        transition: var(--transition);
+      }
+      .tl-content:hover {
+        background: rgba(255,255,255,0.08);
+        border-color: rgba(244,121,32,0.3);
+      }
+      .tl-content.right { grid-column: 3; }
+      .tl-content.left  { grid-column: 1; text-align: right; }
+
+      .tl-dot-wrap {
+        grid-column: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+        position: relative;
+        z-index: 2;
+      }
+      .tl-dot {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: var(--gold);
+        border: 3px solid var(--primary);
+        box-shadow: 0 0 0 3px rgba(244,121,32,0.35);
+        flex-shrink: 0;
+      }
+      .tl-date {
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: var(--gold);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 6px;
+        white-space: nowrap;
+      }
+
+      .tl-content .tl-cat {
+        display: inline-block;
+        font-size: 0.68rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--gold);
+        margin-bottom: 8px;
+      }
+      .tl-content h5 { color: var(--white); font-size: 0.98rem; margin-bottom: 8px; line-height: 1.4; }
+      .tl-content p { font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.65; }
+
+      /* Upcoming events */
+      .upcoming-section { background: var(--off-white); padding: 96px 0; }
+      .upcoming-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+        margin-bottom: 48px;
+      }
+      .upcoming-card {
+        background: var(--white);
+        border-radius: var(--radius-lg);
+        padding: 32px;
+        display: flex;
+        gap: 24px;
+        align-items: flex-start;
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition);
+        border: 1px solid var(--light-gray);
+      }
+      .upcoming-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); border-color: var(--gold); }
+      .upcoming-date-block {
+        background: var(--primary);
+        border-radius: var(--radius);
+        padding: 12px 16px;
+        text-align: center;
+        flex-shrink: 0;
+        min-width: 64px;
+      }
+      .upcoming-date-block .day { font-size: 1.8rem; font-weight: 800; color: var(--gold); line-height: 1; display: block; }
+      .upcoming-date-block .month { font-size: 0.72rem; font-weight: 700; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; display: block; }
+      .upcoming-card-body h5 { color: var(--primary); font-size: 1.02rem; margin-bottom: 8px; line-height: 1.4; }
+      .upcoming-card-body p { font-size: 0.87rem; color: var(--gray); line-height: 1.6; margin-bottom: 14px; }
+      .upcoming-detail {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+      .upc-detail-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 0.78rem;
+        color: var(--gray);
+        font-weight: 500;
+      }
+      .upc-detail-item .icon { color: var(--gold); }
+
+      /* Stats band */
+      .act-stats-band {
+        background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+        padding: 56px 0;
+      }
+      .act-stats-inner {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        text-align: center;
+      }
+      .act-stat-item {
+        padding: 12px 24px;
+        border-right: 1px solid rgba(255,255,255,0.2);
+      }
+      .act-stat-item:last-child { border-right: none; }
+      .act-stat-num { font-size: 2.4rem; font-weight: 800; color: var(--white); display: block; line-height: 1; margin-bottom: 6px; }
+      .act-stat-lbl { font-size: 0.82rem; color: rgba(255,255,255,0.8); font-weight: 500; }
+
+      /* Pagination */
+      .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        margin-top: 16px;
+      }
+      .page-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border: 2px solid var(--light-gray);
+        background: var(--white);
+        color: var(--gray);
+        cursor: pointer;
+        transition: var(--transition);
+        font-family: var(--font-main);
+      }
+      .page-btn:hover, .page-btn.active {
+        background: var(--primary);
+        border-color: var(--primary);
+        color: var(--white);
+      }
+
+      /* Responsive */
+      @media (max-width: 992px) {
+        .featured-activity { grid-template-columns: 1fr; }
+        .featured-activity-img { min-height: 220px; }
+        .activities-grid { grid-template-columns: repeat(2, 1fr); }
+        .upcoming-grid { grid-template-columns: 1fr; }
+        .act-stats-inner { grid-template-columns: repeat(2, 1fr); }
+        .act-stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2); }
+        .act-stat-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.2); }
+        .act-stat-item:nth-last-child(-n+2) { border-bottom: none; }
+        .timeline::before { left: 28px; transform: none; }
+        .timeline-item { grid-template-columns: 56px 1fr; }
+        .tl-dot-wrap { grid-column: 1; grid-row: 1; }
+        .tl-content { grid-column: 2; grid-row: 1; }
+        .tl-content.left { grid-column: 2; text-align: left; }
+        .tl-content.right { grid-column: 2; }
+      }
+      @media (max-width: 576px) {
+        .activities-grid { grid-template-columns: 1fr; }
+        .featured-activity-content { padding: 32px 24px; }
+        .filter-bar { gap: 8px; }
+        .filter-btn { padding: 7px 14px; font-size: 0.8rem; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header id="header">
+      <div class="container">
+        <nav class="nav-inner">
+          <a href="index.html" class="logo"><img src="assets/images/logo.jpeg" alt="Cabinet Orochi" style="height:44px;width:auto;border-radius:6px;" /></a>
+          <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="about.html">À Propos</a>
+            <a href="services.html">Nos Services</a>
+            <a href="for-schools.html">Établissements</a>
+            <a href="pricing.html">Tarifs</a>
+            <a href="activites.html" class="active">Activités</a>
+            <a href="gallery.html">Galerie</a>
+            <a href="videos.html">Vidéos</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html" class="nav-cta btn">Inscription</a>
+          </div>
+          <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <nav class="mobile-menu" role="dialog" aria-label="Menu mobile">
+      <button class="mobile-menu-close" aria-label="Fermer">✕</button>
+      <a href="index.html">Accueil</a>
+      <a href="about.html">À Propos</a>
+      <a href="services.html">Nos Services</a>
+      <a href="for-schools.html">Établissements</a>
+      <a href="pricing.html">Tarifs</a>
+      <a href="activites.html">Activités</a>
+      <a href="gallery.html">Galerie</a>
+      <a href="videos.html">Vidéos</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html" style="color:var(--gold);font-weight:700;">Inscription</a>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+      <div class="container page-header-inner">
+        <div class="breadcrumb">
+          <a href="index.html">Accueil</a>
+          <span>/</span>
+          <span style="color:rgba(255,255,255,0.8);">Activités</span>
+        </div>
+        <h1>Nos Activités</h1>
+        <p>Séances de formation, ateliers, conférences et événements — retour sur tout ce que le Cabinet Orochi accomplit au quotidien pour l'excellence scolaire.</p>
+      </div>
+    </section>
+
+    <!-- ======== STATS BAND ======== -->
+    <div class="act-stats-band">
+      <div class="container">
+        <div class="act-stats-inner">
+          <div class="act-stat-item fade-in">
+            <span class="act-stat-num">120+</span>
+            <span class="act-stat-lbl">Séances réalisées</span>
+          </div>
+          <div class="act-stat-item fade-in fade-in-delay-1">
+            <span class="act-stat-num">18</span>
+            <span class="act-stat-lbl">Écoles partenaires</span>
+          </div>
+          <div class="act-stat-item fade-in fade-in-delay-2">
+            <span class="act-stat-num">350+</span>
+            <span class="act-stat-lbl">Élèves accompagnés</span>
+          </div>
+          <div class="act-stat-item fade-in fade-in-delay-3">
+            <span class="act-stat-num">6</span>
+            <span class="act-stat-lbl">Types d'activités</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======== MAIN ACTIVITY CONTENT ======== -->
+    <section class="section" style="background:var(--white);">
+      <div class="container">
+
+        <!-- Featured Activity -->
+        <div class="featured-activity fade-in">
+          <div class="featured-activity-img">
+            <div class="featured-activity-badge">À la une</div>
+            <span class="feat-emoji">🎓</span>
+            <span class="feat-img-label">Photo de l'activité</span>
+          </div>
+          <div class="featured-activity-content">
+            <div class="featured-activity-meta">
+              <div class="feat-meta-chip"><span class="dot"></span> Formation</div>
+              <div class="feat-meta-chip"><span class="dot"></span> Mars 2026</div>
+              <div class="feat-meta-chip"><span class="dot"></span> Yopougon</div>
+            </div>
+            <h2>Grand atelier de <span>conscientisation parentale</span> — Saison 2026</h2>
+            <p>
+              Le Cabinet Orochi a organisé son plus grand atelier de conscientisation à ce jour, réunissant plus de 80 parents d'élèves dans le quartier de Yopougon. L'objectif : aider les familles à mieux comprendre les lacunes scolaires de leurs enfants et les outiller pour les accompagner efficacement à la maison.
+            </p>
+            <div class="featured-activity-tags">
+              <span class="act-tag">Atelier</span>
+              <span class="act-tag">Parents</span>
+              <span class="act-tag">Conscientisation</span>
+              <span class="act-tag">Yopougon</span>
+            </div>
+            <a href="contact.html" class="btn btn-primary">Participer à nos prochains événements →</a>
+          </div>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar fade-in" id="filter-bar">
+          <span class="filter-label">Filtrer :</span>
+          <button class="filter-btn active" data-filter="all">Tout voir <span class="filter-count">12</span></button>
+          <button class="filter-btn" data-filter="formation">Formation <span class="filter-count">4</span></button>
+          <button class="filter-btn" data-filter="atelier">Atelier <span class="filter-count">3</span></button>
+          <button class="filter-btn" data-filter="conference">Conférence <span class="filter-count">2</span></button>
+          <button class="filter-btn" data-filter="orientation">Orientation <span class="filter-count">2</span></button>
+          <button class="filter-btn" data-filter="partenariat">Partenariat <span class="filter-count">1</span></button>
+        </div>
+
+        <!-- Activities Grid -->
+        <div class="activities-grid" id="activities-grid">
+
+          <!-- 1 -->
+          <div class="activity-card fade-in fade-in-delay-1" data-category="formation">
+            <div class="act-card-img">
+              <span class="act-category-badge badge-formation">Formation</span>
+              <span class="act-emoji">📖</span>
+              <span class="act-img-label">Séance de lecture</span>
+            </div>
+            <div class="act-card-body">
+              <div class="act-card-meta">
+                <span>📅 Avr. 2026</span>
+                <span class="sep"></span>
+                <span>📍 Cabinet — Yopougon</span>
+              </div>
+              <h4>Séances intensives de formation en lecture — Cycle primaire</h4>
+              <p>Treize séances de remédiation en lecture pour les élèves du CE1 au CM2 présentant des difficultés de décodage et de fluidité. Technique de lecture syllabique et de compréhension active appliquée.</p>
+              <div class="act-card-footer">
+                <div class="act-info-pill"><span class="icon">👥</span> 12 élèves</div>
+                <a href="services.html#lecture" class="act-read-more">En savoir plus →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2 -->
+          <div class="activity-card fade-in fade-in-delay-2" data-category="atelier">
+            <div class="act-card-img">
+              <span class="act-category-badge badge-atelier">Atelier</span>
+              <span class="act-emoji">🎤</span>
+              <span class="act-img-label">Conférence parentale</span>
+            </div>
+            <div class="act-card-body">
+              <div class="act-card-meta">
+                <span>📅 Mar. 2026</span>
+                <span class="sep"></span>
+                <span>📍 École partenaire — Abobo</span>
+              </div>
+              <h4>Atelier de conscientisation parentale : comprendre les lacunes de votre enfant</h4>
+              <p>Un atelier interactif destiné aux parents pour comprendre les mécanismes des lacunes scolaires, les signaux d'alerte à surveiller et les premières actions à mettre en place à la maison.</p>
+              <div class="act-card-footer">
+                <div class="act-info-pill"><span class="icon">👥</span> 80 parents</div>
+                <a href="services.html#conscientisation" class="act-read-more">En savoir plus →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3 -->
+          <div class="activity-card fade-in fade-in-delay-3" data-category="formation">
+            <div class="act-card-img">
+              <span class="act-category-badge badge-formation">Formation</span>
+              <span class="act-emoji">➕</span>
+              <span class="act-img-label">Séance maths</span>
+            </div>
+            <div class="act-card-body">
+              <div class="act-card-meta">
+                <span>📅 Fév. 2026</span>
+                <span class="sep"></span>
+                <span>📍 Domicile — Cocody</span>
+              </div>
+              <h4>Remédiation en mathématiques — 24 séances à domicile CM1/CM2</h4>
+              <p>Programme complet de 24 séances de remédiation mathématiques réalisé à domicile. Travail sur les tables de multiplication, les fractions, la résolution de problèmes et la logique numérique.</p>
+              <div class="act-card-footer">
+                <div class="act-info-pill"><span class="icon">👤</span> 1 élève</div>
+                <a href="services.html#maths" class="act-read-more">En savoir plus →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4 -->
+          <div class="activity-card fade-in fade-in-delay-1" data-category="orientation">
+            <div class="act-card-img">
+              <span class="act-category-badge badge-orientation">Orientation</span>
+              <span class="act-emoji">🌟</span>
+              <span class="act-img-label">Rencontre métier</span>
+            </div>
+            <div class="act-card-body">
+              <div class="act-card-meta">
+                <span>📅 Jan. 2026</span>
+                <span class="sep"></span>
+                <span>📍 Cabinet — Yopougon</span>
+              </div>
+              <h4>Rencontre du Métier de Rêve — Session orientée 3ème &amp; Terminale</h4>
+              <p>Séance d'orientation professionnelle d'une journée où des élèves de 3ème et de Terminale ont rencontré des professionnels de différents secteurs pour construire leur projet d'avenir.</p>
+              <div class="act-card-footer">
+                <div class="act-info-pill"><span class="icon">👥</span> 25 élèves</div>
+                <a href="services.html#metier" class="act-read-more">En savoir plus →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5 -->
+          <div class="activity-card fade-in fade-in-delay-2" data-category="conference">
+            <div class="act-card-img">
+              <span class="act-category-badge badge-conference">Conférence</span>
+              <span class="act-emoji">🏫</span>
+              <span class="act-img-label">Conférence directeurs</span>
+            </div>
+            <div class="act-card-body">
+              <div class="act-card-meta">
+                <span>📅 Déc. 2025</span>
+                <span class="sep"></span>
+                <span>📍 Hôtel Ivoire — Abidjan</span>
+              </div>
+              <h4>Conférence des directeurs d'établissements scolaires partenaires 2025</h4>
+              <p>Réunion annuelle de tous les directeurs d'écoles partenaires du Cabinet Orochi pour présenter les résultats de l'année, définir les objectifs 2026 et signer de nouveaux partenariats.</p>
+              <div class="act-card-footer">
+                <div class="act-info-pill"><span class="icon">👥</span> 18 directeurs</div>
+                <a href="for-schools.html" class="act-read-more">Devenir partenaire →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6 -->
+          <div class="activity-card fade-in fade-in-delay-3" data-category="formation">
+            <div class="act-card-img">
+              <span class="act-category-badge badge-formation">Formation</span>
+              <span class="act-emoji">✏️</span>
+              <span class="act-img-label">Séance dictée</span>
+            </div>
+            <div class="act-card-body">
+              <div class="act-card-meta">
+                <span>📅 Nov. 2025</span>
+                <span class="sep"></span>
+                <span>📍 Cabinet — Yopougon</span>
+              </div>
+              <h4>Perfectionnement en dictée — 25 séances de maîtrise orthographique</h4>
+              <p>Programme intensif de 25 séances dédié à l'orthographe, la grammaire et l'expression écrite. Les élèves travaillent sur des dictées progressives, des exercices de conjugaison et des productions écrites.</p>
+              <div class="act-card-footer">
+                <div class="act-info-pill"><span class="icon">👥</span> 8 élèves</div>
+                <a href="services.html#dictee" class="act-read-more">En savoir plus →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7 -->
+          <div class="activity-card fade-in fade-in-delay-1" data-category="atelier">
+            <div class="act-card-img">
+              <span class="act-category-badge badge-atelier">Atelier</span>
+              <span class="act-emoji">🧠</span>
+              <span class="act-img-label">Bilan scolaire</span>
+            </div>
+            <div class="act-card-body">
+              <div class="act-card-meta">
+                <span>📅 Oct. 2025</span>
+                <span class="sep"></span>
+                <span>📍 Cabinet — Yopougon</span>
+              </div>
+              <h4>Journée de dépistage collectif des lacunes — École Sainte-Marie</h4>
+              <p>Session de dépistage collectif organisée dans les locaux de l'École Sainte-Marie. Les formateurs du Cabinet Orochi ont évalué 45 élèves et fourni un rapport individuel à chaque famille.</p>
+              <div class="act-card-footer">
+                <div class="act-info-pill"><span class="icon">👥</span> 45 élèves</div>
+                <a href="services.html#depistage" class="act-read-more">En savoir plus →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8 -->
+          <div class="activity-card fade-in fade-in-delay-2" data-category="partenariat">
+            <div class="act-card-img">
+              <span class="act-category-badge badge-partenariat">Partenariat</span>
+              <span class="act-emoji">🤝</span>
+              <span class="act-img-label">Signature partenariat</span>
+            </div>
+            <div class="act-card-body">
+              <div class="act-card-meta">
+                <span>📅 Sep. 2025</span>
+                <span class="sep"></span>
+                <span>📍 Yopougon</span>
+              </div>
+              <h4>Signature de 5 nouvelles conventions de partenariat scolaire — Rentrée 2025</h4>
+              <p>À l'occasion de la rentrée scolaire 2025-2026, le Cabinet Orochi a officialisé 5 nouveaux partenariats avec des établissements privés de Yopougon, Abobo et Cocody pour déployer le programme Excellence.</p>
+              <div class="act-card-footer">
+                <div class="act-info-pill"><span class="icon">🏫</span> 5 écoles</div>
+                <a href="for-schools.html" class="act-read-more">Devenir partenaire →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 9 -->
+          <div class="activity-card fade-in fade-in-delay-3" data-category="formation">
+            <div class="act-card-img">
+              <span class="act-category-badge badge-formation">Formation</span>
+              <span class="act-emoji">🇬🇧</span>
+              <span class="act-img-label">Séance anglais</span>
+            </div>
+            <div class="act-card-body">
+              <div class="act-card-meta">
+                <span>📅 Août 2025</span>
+                <span class="sep"></span>
+                <span>📍 Domicile — Marcory</span>
+              </div>
+              <h4>Programme de perfectionnement en anglais — Préparation BEPC</h4>
+              <p>Programme de perfectionnement en anglais oral et écrit, conçu pour des élèves de 3ème en préparation du BEPC. Travail sur la compréhension, la rédaction et la conversation.</p>
+              <div class="act-card-footer">
+                <div class="act-info-pill"><span class="icon">👥</span> 3 élèves</div>
+                <a href="services.html#anglais" class="act-read-more">En savoir plus →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 10 -->
+          <div class="activity-card fade-in fade-in-delay-1" data-category="conference">
+            <div class="act-card-img">
+              <span class="act-category-badge badge-conference">Conférence</span>
+              <span class="act-emoji">📊</span>
+              <span class="act-img-label">Présentation résultats</span>
+            </div>
+            <div class="act-card-body">
+              <div class="act-card-meta">
+                <span>📅 Juil. 2025</span>
+                <span class="sep"></span>
+                <span>📍 Yopougon</span>
+              </div>
+              <h4>Présentation des résultats annuels — Bilan de la saison 2024-2025</h4>
+              <p>Le Cabinet Orochi a présenté les résultats de sa première saison complète : taux de progression des élèves, satisfaction des parents, et bilan financier des partenariats scolaires.</p>
+              <div class="act-card-footer">
+                <div class="act-info-pill"><span class="icon">👥</span> 60 participants</div>
+                <a href="about.html" class="act-read-more">À propos de nous →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 11 -->
+          <div class="activity-card fade-in fade-in-delay-2" data-category="orientation">
+            <div class="act-card-img">
+              <span class="act-category-badge badge-orientation">Orientation</span>
+              <span class="act-emoji">🎯</span>
+              <span class="act-img-label">Bilan conscience</span>
+            </div>
+            <div class="act-card-body">
+              <div class="act-card-meta">
+                <span>📅 Juin 2025</span>
+                <span class="sep"></span>
+                <span>📍 Cabinet — Yopougon</span>
+              </div>
+              <h4>Sessions de bilan de conscience individuel — Fin d'année primaire</h4>
+              <p>En fin d'année scolaire, le Cabinet a proposé des séances de bilan de conscience individuel pour aider les élèves à comprendre leurs résultats et à se projeter sereinement dans l'année suivante.</p>
+              <div class="act-card-footer">
+                <div class="act-info-pill"><span class="icon">👥</span> 30 élèves</div>
+                <a href="services.html#bilan" class="act-read-more">En savoir plus →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 12 -->
+          <div class="activity-card fade-in fade-in-delay-3" data-category="atelier">
+            <div class="act-card-img">
+              <span class="act-category-badge badge-atelier">Atelier</span>
+              <span class="act-emoji">🏆</span>
+              <span class="act-img-label">Programme excellence</span>
+            </div>
+            <div class="act-card-body">
+              <div class="act-card-meta">
+                <span>📅 Mai 2025</span>
+                <span class="sep"></span>
+                <span>📍 École partenaire — Yopougon</span>
+              </div>
+              <h4>Lancement du Programme Excellence dans 3 établissements partenaires</h4>
+              <p>Le Programme Excellence a été officiellement lancé dans trois établissements scolaires partenaires. Une cérémonie de remise de kits pédagogiques a été organisée pour marquer le démarrage du programme.</p>
+              <div class="act-card-footer">
+                <div class="act-info-pill"><span class="icon">🏫</span> 3 écoles</div>
+                <a href="for-schools.html" class="act-read-more">Voir le programme →</a>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /activities-grid -->
+
+        <!-- Pagination -->
+        <div class="pagination fade-in">
+          <button class="page-btn active">1</button>
+          <button class="page-btn">2</button>
+          <button class="page-btn">3</button>
+          <button class="page-btn" style="width:auto;padding:0 16px;border-radius:20px;">Suivant →</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======== TIMELINE ======== -->
+    <section class="timeline-section">
+      <div class="container">
+        <div class="timeline-header fade-in">
+          <span class="eyebrow">Chronologie</span>
+          <h2>Notre parcours en activités</h2>
+          <p>Les grandes étapes du développement du Cabinet Orochi depuis son lancement</p>
+        </div>
+
+        <div class="timeline">
+
+          <div class="timeline-item fade-in">
+            <div class="tl-content left">
+              <span class="tl-cat">Fondation</span>
+              <h5>Création du Cabinet Orochi à Yopougon</h5>
+              <p>Lancement officiel du cabinet avec les premiers programmes de dépistage et de formation en lecture pour les élèves du primaire.</p>
+            </div>
+            <div class="tl-dot-wrap">
+              <div class="tl-dot"></div>
+              <div class="tl-date">2024</div>
+            </div>
+            <div style="grid-column:3;"></div>
+          </div>
+
+          <div class="timeline-item fade-in">
+            <div style="grid-column:1;"></div>
+            <div class="tl-dot-wrap">
+              <div class="tl-dot"></div>
+              <div class="tl-date">Jan. 2025</div>
+            </div>
+            <div class="tl-content right">
+              <span class="tl-cat">Expansion</span>
+              <h5>Lancement des formations à domicile</h5>
+              <p>Déploiement du service de formation à domicile à Yopougon et dans les communes environnantes d'Abidjan avec une équipe de 4 formateurs.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-in">
+            <div class="tl-content left">
+              <span class="tl-cat">Partenariat</span>
+              <h5>Premiers partenariats scolaires officialisés</h5>
+              <p>Signature des 3 premières conventions de partenariat avec des établissements privés de Yopougon et Abobo.</p>
+            </div>
+            <div class="tl-dot-wrap">
+              <div class="tl-dot"></div>
+              <div class="tl-date">Avr. 2025</div>
+            </div>
+            <div style="grid-column:3;"></div>
+          </div>
+
+          <div class="timeline-item fade-in">
+            <div style="grid-column:1;"></div>
+            <div class="tl-dot-wrap">
+              <div class="tl-dot"></div>
+              <div class="tl-date">Sep. 2025</div>
+            </div>
+            <div class="tl-content right">
+              <span class="tl-cat">Programme</span>
+              <h5>Lancement du Programme Excellence dans les écoles</h5>
+              <p>Déploiement du Programme Excellence dans 5 établissements partenaires à la rentrée 2025-2026. Plus de 200 élèves intégrés dès la première semaine.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-in">
+            <div class="tl-content left">
+              <span class="tl-cat">Événement</span>
+              <h5>1ère Conférence annuelle des directeurs partenaires</h5>
+              <p>Plus de 18 directeurs d'établissements réunis pour présenter les résultats de la saison et planifier les actions 2026.</p>
+            </div>
+            <div class="tl-dot-wrap">
+              <div class="tl-dot"></div>
+              <div class="tl-date">Déc. 2025</div>
+            </div>
+            <div style="grid-column:3;"></div>
+          </div>
+
+          <div class="timeline-item fade-in">
+            <div style="grid-column:1;"></div>
+            <div class="tl-dot-wrap">
+              <div class="tl-dot"></div>
+              <div class="tl-date">2026 →</div>
+            </div>
+            <div class="tl-content right">
+              <span class="tl-cat">En cours</span>
+              <h5>Expansion régionale &amp; digitalisation</h5>
+              <p>Ouverture des candidatures pour les nouvelles communes. Développement d'une plateforme de suivi numérique des progrès des élèves en cours.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== UPCOMING EVENTS ======== -->
+    <section class="upcoming-section">
+      <div class="container">
+        <div class="section-header fade-in" style="text-align:left;margin-bottom:48px;">
+          <span class="eyebrow">À Venir</span>
+          <h2 style="color:var(--primary);">Prochains événements</h2>
+          <p>Ne manquez pas nos prochaines activités ouvertes au public. Inscrivez-vous dès maintenant.</p>
+          <div class="divider" style="margin:16px 0 0;"></div>
+        </div>
+
+        <div class="upcoming-grid">
+          <div class="upcoming-card fade-in fade-in-delay-1">
+            <div class="upcoming-date-block">
+              <span class="day">18</span>
+              <span class="month">Avr.</span>
+            </div>
+            <div class="upcoming-card-body">
+              <h5>Atelier de conscientisation — Portes ouvertes au Cabinet</h5>
+              <p>Venez découvrir les méthodes du Cabinet Orochi lors d'une journée portes ouvertes. Dépistage gratuit pour les 20 premiers inscrits.</p>
+              <div class="upcoming-detail">
+                <div class="upc-detail-item"><span class="icon">🕐</span> 9h00 – 13h00</div>
+                <div class="upc-detail-item"><span class="icon">📍</span> Cabinet — Yopougon</div>
+                <div class="upc-detail-item"><span class="icon">🆓</span> Entrée gratuite</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="upcoming-card fade-in fade-in-delay-2">
+            <div class="upcoming-date-block">
+              <span class="day">25</span>
+              <span class="month">Avr.</span>
+            </div>
+            <div class="upcoming-card-body">
+              <h5>Conférence parents : « Comment aider son enfant à travailler seul ? »</h5>
+              <p>Une conférence pratique et interactive pour donner aux parents des outils concrets pour accompagner leurs enfants à la maison sans conflit.</p>
+              <div class="upcoming-detail">
+                <div class="upc-detail-item"><span class="icon">🕐</span> 17h00 – 19h30</div>
+                <div class="upc-detail-item"><span class="icon">📍</span> Salle polyvalente, Abobo</div>
+                <div class="upc-detail-item"><span class="icon">💰</span> 2.000 FCFA</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="upcoming-card fade-in fade-in-delay-3">
+            <div class="upcoming-date-block">
+              <span class="day">10</span>
+              <span class="month">Mai</span>
+            </div>
+            <div class="upcoming-card-body">
+              <h5>Rencontre du Métier de Rêve — Session orientée lycéens</h5>
+              <p>Une journée d'immersion professionnelle pour les lycéens de 2nde, 1ère et Terminale. Rencontres avec 10 professionnels de différents secteurs d'activité.</p>
+              <div class="upcoming-detail">
+                <div class="upc-detail-item"><span class="icon">🕐</span> 8h30 – 17h00</div>
+                <div class="upc-detail-item"><span class="icon">📍</span> Cabinet — Yopougon</div>
+                <div class="upc-detail-item"><span class="icon">💰</span> 30.000 FCFA</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="upcoming-card fade-in fade-in-delay-1">
+            <div class="upcoming-date-block">
+              <span class="day">24</span>
+              <span class="month">Mai</span>
+            </div>
+            <div class="upcoming-card-body">
+              <h5>Journée de dépistage collectif — Écoles partenaires saison 2026-2027</h5>
+              <p>Le Cabinet Orochi propose aux établissements scolaires une journée de dépistage collectif pour identifier les élèves nécessitant une remédiation à la rentrée 2026.</p>
+              <div class="upcoming-detail">
+                <div class="upc-detail-item"><span class="icon">🕐</span> Journée entière</div>
+                <div class="upc-detail-item"><span class="icon">📍</span> Dans votre établissement</div>
+                <div class="upc-detail-item"><span class="icon">🏫</span> Réservé aux écoles</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center fade-in">
+          <a href="contact.html" class="btn btn-primary btn-lg">S'inscrire à un événement →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== CTA ======== -->
+    <section class="cta-band">
+      <div class="container">
+        <div class="cta-band-inner">
+          <div class="fade-in">
+            <h2>Participez à nos<br>prochaines activités</h2>
+            <p>Restez informé de tous nos événements, ateliers et séances ouvertes. Inscrivez votre enfant ou votre école dès aujourd'hui.</p>
+          </div>
+          <div class="cta-band-btns fade-in fade-in-delay-2">
+            <a href="contact.html" class="btn btn-primary btn-lg">Prendre rendez-vous</a>
+            <a href="services.html" class="btn btn-outline-white btn-lg">Voir nos services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <a href="index.html" class="logo" style="display:inline-flex;margin-bottom:20px;"><img src="assets/images/logo.jpeg" alt="Cabinet Orochi" style="height:44px;width:auto;border-radius:6px;" /></a>
+            <p class="footer-desc">Centre de formation éducatif spécialisé dans le dépistage des lacunes scolaires et l'accompagnement pédagogique des apprenants en Côte d'Ivoire.</p>
+            <div class="footer-social">
+              <a href="https://www.facebook.com/cabinetoroochi" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook" title="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+              <a href="https://www.tiktok.com/@cabinetoroochi" target="_blank" rel="noopener" class="social-btn" aria-label="TikTok" title="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+              <a href="https://www.instagram.com/cabinetoroochi" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram" title="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+              <a href="https://wa.me/22507000000" target="_blank" rel="noopener" class="social-btn" aria-label="WhatsApp" title="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h5>Navigation</h5>
+            <nav class="footer-links">
+              <a href="index.html">Accueil</a>
+              <a href="about.html">À Propos</a>
+              <a href="services.html">Nos Services</a>
+              <a href="for-schools.html">Établissements</a>
+              <a href="pricing.html">Tarifs</a>
+              <a href="activites.html">Activités</a>
+              <a href="gallery.html">Galerie</a>
+              <a href="videos.html">Vidéos</a>
+              <a href="blog.html">Blog / Ressources</a>
+            </nav>
+          </div>
+          <div class="footer-col">
+            <h5>Réseaux sociaux</h5>
+            <nav class="footer-links">
+              <a href="https://www.facebook.com/cabinetoroochi" target="_blank" rel="noopener">Facebook</a>
+              <a href="https://www.tiktok.com/@cabinetoroochi" target="_blank" rel="noopener">TikTok</a>
+              <a href="https://www.instagram.com/cabinetoroochi" target="_blank" rel="noopener">Instagram</a>
+              <a href="https://wa.me/22507000000" target="_blank" rel="noopener">WhatsApp</a>
+            </nav>
+          </div>
+          <div class="footer-col">
+            <h5>Contact</h5>
+            <div class="footer-contact-item"><span class="icon">📍</span><span>Yopougon, Abidjan<br>Côte d'Ivoire</span></div>
+            <div class="footer-contact-item"><span class="icon">📞</span><span>+225 07 00 00 00 00</span></div>
+            <div class="footer-contact-item"><span class="icon">✉️</span><span>contact@cabinetoroochi.ci</span></div>
+            <div class="footer-contact-item"><span class="icon">🕐</span><span>Lun–Sam : 8h00–18h00</span></div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 Cabinet Orochi. Tous droits réservés.</p>
+          <p>Conçu pour l'excellence scolaire en Côte d'Ivoire 🇨🇮</p>
+        </div>
+      </div>
+    </footer>
+
+    <button class="back-to-top" aria-label="Retour en haut"
+      style="position:fixed;bottom:90px;right:24px;width:44px;height:44px;border-radius:50%;
+             background:var(--gold);color:var(--white);font-size:1.2rem;display:none;
+             align-items:center;justify-content:center;box-shadow:var(--shadow-md);
+             transition:var(--transition);z-index:900;border:none;cursor:pointer;">↑</button>
+    <style>.back-to-top.visible{display:flex!important;}</style>
+
+    <script src="js/main.js"></script>
+    <script>
+    /* Category filter for activities grid */
+    (function () {
+      var filterBar = document.getElementById('filter-bar');
+      var grid      = document.getElementById('activities-grid');
+      if (!filterBar || !grid) return;
+
+      filterBar.addEventListener('click', function (e) {
+        var btn = e.target.closest('.filter-btn');
+        if (!btn) return;
+
+        /* Update active button */
+        filterBar.querySelectorAll('.filter-btn').forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+
+        var filter = btn.dataset.filter;
+        grid.querySelectorAll('.activity-card').forEach(function (card) {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    })();
+    </script>
+  </body>
+</html>

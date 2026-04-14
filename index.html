@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="assets/images/logo.jpeg" type="image/jpeg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Cabinet Orochi — Centre de formation éducatif spécialisé dans le dépistage des lacunes scolaires et l'accompagnement pédagogique des apprenants en Côte d'Ivoire." />
+    <title>Cabinet Orochi — Dépistage & Correction des Lacunes Scolaires</title>
+    <link rel="canonical" href="https://www.cabinetoroochi.ci/" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Cabinet Orochi" />
+    <meta name="keywords" content="cabinet orochi, lacunes scolaires, dépistage scolaire, formation lecture, remédiation mathématiques, accompagnement scolaire, Abidjan, Yopougon, Côte d'Ivoire" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Cabinet Orochi" />
+    <meta property="og:title" content="Cabinet Orochi — Dépistage & Correction des Lacunes Scolaires" />
+    <meta property="og:description" content="Centre de formation éducatif spécialisé dans le dépistage des lacunes scolaires et l'accompagnement pédagogique des apprenants en Côte d'Ivoire." />
+    <meta property="og:url" content="https://www.cabinetoroochi.ci/" />
+    <meta property="og:locale" content="fr_CI" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Cabinet Orochi — Dépistage & Correction des Lacunes Scolaires" />
+    <meta name="twitter:description" content="Centre de formation éducatif spécialisé dans le dépistage des lacunes scolaires et l'accompagnement pédagogique des apprenants en Côte d'Ivoire." />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalOrganization","name":"Cabinet Orochi","url":"https://www.cabinetoroochi.ci/","telephone":"+22507000000","email":"contact@cabinetoroochi.ci","address":{"@type":"PostalAddress","addressLocality":"Yopougon","addressRegion":"Abidjan","addressCountry":"CI"},"openingHours":"Mo,Tu,We,Th,Fr,Sa 08:00-18:00"}</script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <style>
+      /* =============================================
+         HOME PAGE SPECIFIC STYLES
+         ============================================= */
+
+      /* ---- Announcement Bar ---- */
+      .announcement-bar {
+        background: var(--gold);
+        color: var(--white);
+        padding: 10px 0;
+        text-align: center;
+        font-size: 0.88rem;
+        font-weight: 600;
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+        z-index: 1001;
+      }
+      .announcement-bar .ticker-inner {
+        display: inline-block;
+        animation: ticker 28s linear infinite;
+        padding-left: 100%;
+      }
+      .announcement-bar span { margin: 0 40px; }
+      @keyframes ticker {
+        from { transform: translateX(0); }
+        to { transform: translateX(-100%); }
+      }
+
+      /* ---- Hero Banner ---- */
+      .hero-banner {
+        background: var(--primary);
+        min-height: 92vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-banner::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(ellipse 60% 80% at 70% 50%, rgba(244,121,32,0.12) 0%, transparent 70%),
+          radial-gradient(ellipse 40% 60% at 10% 80%, rgba(255,255,255,0.04) 0%, transparent 70%);
+        pointer-events: none;
+      }
+
+      .hero-banner-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+        padding: 120px 0 80px;
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(244,121,32,0.15);
+        border: 1px solid rgba(244,121,32,0.35);
+        color: var(--gold);
+        padding: 7px 18px;
+        border-radius: 50px;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+      }
+      .hero-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+
+      .hero-banner h1 {
+        color: var(--white);
+        font-size: clamp(2.2rem, 5vw, 3.6rem);
+        line-height: 1.15;
+        margin-bottom: 24px;
+        font-weight: 800;
+      }
+      .hero-banner h1 .highlight {
+        color: var(--gold);
+        position: relative;
+        display: inline-block;
+      }
+
+      .hero-banner .hero-desc {
+        color: rgba(255,255,255,0.75);
+        font-size: 1.1rem;
+        line-height: 1.75;
+        margin-bottom: 40px;
+        max-width: 500px;
+      }
+      .hero-banner .hero-desc strong { color: var(--gold-light); }
+
+      .hero-banner-btns { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 56px; }
+
+      .hero-contact-strip {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        padding-top: 28px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+      }
+      .hero-contact-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.88rem;
+        color: rgba(255,255,255,0.7);
+      }
+      .hero-contact-item .contact-icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+        background: rgba(244,121,32,0.18);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        flex-shrink: 0;
+      }
+      .hero-contact-item strong { color: var(--white); display: block; font-size: 0.95rem; }
+
+      /* Hero right: image card */
+      .hero-img-wrap {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .hero-main-img {
+        width: 100%;
+        border-radius: var(--radius-lg);
+        aspect-ratio: 4/3;
+        background: linear-gradient(135deg, #1a1a1a, #333);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+      }
+      .hero-main-img .img-placeholder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        color: rgba(255,255,255,0.3);
+        font-size: 0.85rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+      .hero-main-img .img-placeholder span { font-size: 4rem; opacity: 0.4; }
+      .hero-main-img img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+
+      .hero-promo-badge {
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+        border-radius: var(--radius);
+        padding: 18px 22px;
+        text-align: center;
+        box-shadow: 0 8px 24px rgba(244,121,32,0.4);
+        z-index: 2;
+      }
+      .hero-promo-badge .promo-label { font-size: 0.65rem; font-weight: 700; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 1px; display: block; }
+      .hero-promo-badge .promo-price { font-size: 1.8rem; font-weight: 800; color: var(--white); line-height: 1; display: block; }
+      .hero-promo-badge .promo-sub { font-size: 0.65rem; font-weight: 600; color: rgba(255,255,255,0.8); letter-spacing: 1px; }
+
+      .hero-qr-badge {
+        position: absolute;
+        bottom: -16px;
+        left: -16px;
+        background: var(--white);
+        border-radius: var(--radius);
+        padding: 14px 18px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        box-shadow: var(--shadow-lg);
+        z-index: 2;
+      }
+      .hero-qr-badge .qr-icon { width: 48px; height: 48px; border-radius: 8px; background: var(--off-white); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; }
+      .hero-qr-badge .qr-text strong { display: block; font-size: 0.85rem; color: var(--primary); font-weight: 700; }
+      .hero-qr-badge .qr-text span { font-size: 0.75rem; color: var(--gray); }
+
+      /* ---- Scroll indicator ---- */
+      .scroll-indicator {
+        position: absolute;
+        bottom: 32px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        color: rgba(255,255,255,0.4);
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        animation: bounce 2s infinite;
+        z-index: 2;
+      }
+      .scroll-indicator::after { content: ''; width: 1px; height: 36px; background: rgba(255,255,255,0.25); }
+      @keyframes bounce {
+        0%, 100% { transform: translateX(-50%) translateY(0); }
+        50% { transform: translateX(-50%) translateY(-6px); }
+      }
+
+      /* ---- Mission Section ---- */
+      .mission-section { background: var(--off-white); padding: 96px 0; }
+      .mission-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: start;
+      }
+
+      .mission-eyebrow {
+        display: inline-block;
+        background: var(--gold);
+        color: var(--white);
+        padding: 5px 16px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+      .mission-section h2 { color: var(--primary); font-size: clamp(1.8rem, 3.5vw, 2.8rem); margin-bottom: 24px; }
+      .mission-section .mission-text {
+        font-size: 0.97rem;
+        color: #4a5568;
+        line-height: 1.85;
+        margin-bottom: 20px;
+      }
+
+      .mission-img-card {
+        background: var(--white);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+        position: relative;
+      }
+      .mission-img-slot {
+        aspect-ratio: 4/5;
+        background: linear-gradient(160deg, #e8e9ea 0%, #d4d5d7 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        color: #9aa0a8;
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        position: relative;
+      }
+      .mission-img-slot img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+      .mission-img-slot .slot-emoji { font-size: 4rem; opacity: 0.35; }
+      .mission-caption {
+        padding: 16px 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border-top: 3px solid var(--gold);
+      }
+      .mission-caption strong { font-size: 0.9rem; color: var(--primary); display: block; }
+      .mission-caption span { font-size: 0.78rem; color: var(--gray); }
+      .caption-avatar {
+        width: 48px; height: 48px; border-radius: 50%; background: var(--gold);
+        display: flex; align-items: center; justify-content: center;
+        color: var(--white); font-weight: 700; font-size: 1.1rem; flex-shrink: 0;
+      }
+
+      /* ---- Activity / Stats Section ---- */
+      .activity-section {
+        background: var(--white);
+        padding: 96px 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .activity-section::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        opacity: 0.03;
+        background-image:
+          radial-gradient(circle at 20px 20px, #000 1px, transparent 0),
+          radial-gradient(circle at 60px 60px, #000 1px, transparent 0);
+        background-size: 80px 80px;
+        pointer-events: none;
+      }
+      .activity-header { text-align: center; margin-bottom: 60px; }
+      .activity-section .mission-eyebrow { background: var(--gold); color: var(--white); }
+
+      .activity-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        margin-bottom: 48px;
+      }
+      .activity-card {
+        background: var(--white);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition);
+        border: 1px solid var(--off-white);
+      }
+      .activity-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+      .activity-img {
+        aspect-ratio: 4/3;
+        background: linear-gradient(135deg, #e8e9ea, #d4d5d7);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #9aa0a8;
+        position: relative;
+        overflow: hidden;
+      }
+      .activity-img img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+      .activity-img .act-emoji { font-size: 2.5rem; opacity: 0.35; }
+      .activity-body { padding: 16px 18px; }
+      .activity-body h5 { color: var(--primary); font-size: 0.9rem; margin-bottom: 6px; line-height: 1.4; }
+      .activity-meta {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.75rem;
+        color: var(--gray);
+      }
+      .activity-meta .meta-icon { color: var(--gold); font-size: 0.65rem; }
+
+      /* ---- Stats Strip ---- */
+      .stats-strip {
+        background: var(--primary);
+        padding: 40px 0;
+      }
+      .stats-strip-inner {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+      }
+      .stats-strip-item {
+        text-align: center;
+        padding: 20px 24px;
+        border-right: 1px solid rgba(255,255,255,0.1);
+      }
+      .stats-strip-item:last-child { border-right: none; }
+      .stats-strip-item .s-num {
+        font-size: 2.4rem;
+        font-weight: 800;
+        color: var(--gold);
+        display: block;
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+      .stats-strip-item .s-lbl {
+        font-size: 0.82rem;
+        color: rgba(255,255,255,0.65);
+        font-weight: 500;
+      }
+
+      /* ---- Teaching / Services Section ---- */
+      .teaching-section {
+        background: var(--primary);
+        padding: 96px 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .teaching-section::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        pointer-events: none;
+      }
+
+      .teaching-header { text-align: center; margin-bottom: 60px; position: relative; z-index: 1; }
+      .teaching-header .mission-eyebrow { background: rgba(244,121,32,0.18); color: var(--gold); border: 1px solid rgba(244,121,32,0.3); }
+      .teaching-header h2 { color: var(--white); }
+
+      .teaching-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto;
+        gap: 20px;
+        position: relative;
+        z-index: 1;
+      }
+      .teaching-card {
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        position: relative;
+        min-height: 200px;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+      .teaching-card:hover { transform: scale(1.02); }
+
+      .teaching-card-bg {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(160deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: var(--radius-lg);
+      }
+      .teaching-card-bg.orange { background: linear-gradient(160deg, rgba(244,121,32,0.25), rgba(244,121,32,0.1)); border-color: rgba(244,121,32,0.3); }
+      .teaching-card-bg.dark  { background: linear-gradient(160deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3)); }
+
+      .teaching-card-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        inset: 0;
+        opacity: 0.45;
+        transition: var(--transition);
+      }
+      .teaching-card:hover .teaching-card-img { opacity: 0.6; }
+
+      .teaching-card-content {
+        position: relative;
+        z-index: 2;
+        padding: 28px 24px 24px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+      .t-level {
+        font-size: 0.7rem;
+        font-weight: 700;
+        color: var(--gold);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 6px;
+      }
+      .teaching-card h4 {
+        color: var(--white);
+        font-size: 1.25rem;
+        margin-bottom: 12px;
+        line-height: 1.3;
+      }
+      .t-icon {
+        width: 40px; height: 40px; border-radius: 50%;
+        background: rgba(255,255,255,0.15);
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1.2rem; margin-bottom: 16px;
+      }
+      .t-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255,255,255,0.15);
+        color: var(--white);
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding: 8px 18px;
+        border-radius: 50px;
+        border: 1px solid rgba(255,255,255,0.2);
+        text-decoration: none;
+        transition: var(--transition);
+        align-self: flex-start;
+      }
+      .t-cta:hover { background: var(--gold); border-color: var(--gold); }
+      .teaching-card.orange-card .t-cta { background: var(--gold); border-color: var(--gold-dark); }
+      .teaching-card.orange-card .t-cta:hover { background: var(--gold-dark); }
+
+      .teaching-tarifs-btn {
+        text-align: center;
+        margin-top: 40px;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* ================================================
+         SHARED CAROUSEL STYLES
+         ================================================ */
+      .carousel-wrap {
+        position: relative;
+      }
+      .carousel-viewport {
+        overflow: hidden;
+        border-radius: var(--radius-lg);
+      }
+      /* Track holds all slides side-by-side */
+      .carousel-track {
+        display: flex;
+        transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: transform;
+      }
+      /* Each slide occupies full viewport width */
+      .carousel-slide {
+        flex: 0 0 100%;
+        min-width: 0;
+        box-sizing: border-box;
+      }
+
+      /* Arrow buttons */
+      .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        transition: var(--transition);
+        line-height: 1;
+        box-shadow: var(--shadow-md);
+      }
+      .carousel-btn-prev { left: -24px; }
+      .carousel-btn-next { right: -24px; }
+
+      /* Dot indicators */
+      .carousel-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 28px;
+      }
+      .carousel-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        transition: var(--transition);
+        padding: 0;
+      }
+
+      /* ---- Testimonials Section ---- */
+      .testimonials-section { background: var(--white); padding: 96px 0; }
+      .testimonials-section .carousel-btn {
+        background: var(--white);
+        color: var(--primary);
+        box-shadow: var(--shadow-md);
+      }
+      .testimonials-section .carousel-btn:hover {
+        background: var(--gold);
+        color: var(--white);
+      }
+      .testimonials-section .carousel-dot { background: var(--light-gray); }
+      .testimonials-section .carousel-dot.active {
+        background: var(--gold);
+        width: 24px;
+        border-radius: 4px;
+      }
+
+      /* Show 3 testimonial cards at once inside a slide */
+      .testi-slide-inner {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        padding: 8px 4px;
+      }
+      .testi-card {
+        background: var(--off-white);
+        border-radius: var(--radius-lg);
+        padding: 32px 28px;
+        position: relative;
+        transition: var(--transition);
+        border: 1px solid var(--light-gray);
+      }
+      .testi-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); background: var(--white); }
+      .testi-card::before {
+        content: '\201C';
+        font-family: Georgia, serif;
+        font-size: 5rem;
+        color: var(--gold);
+        opacity: 0.25;
+        position: absolute;
+        top: 4px;
+        left: 20px;
+        line-height: 1;
+      }
+      .testi-stars { color: var(--gold); font-size: 0.88rem; margin-bottom: 12px; letter-spacing: 2px; }
+      .testi-text {
+        font-size: 0.93rem;
+        color: var(--gray);
+        line-height: 1.75;
+        font-style: italic;
+        margin-bottom: 24px;
+      }
+      .testi-author { display: flex; align-items: center; gap: 12px; }
+      .testi-avatar {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background: var(--primary);
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1rem;
+        flex-shrink: 0;
+      }
+      .testi-avatar.orange { background: var(--gold); }
+      .testi-name { font-weight: 700; font-size: 0.9rem; color: var(--primary); }
+      .testi-loc  { font-size: 0.78rem; color: var(--gray); }
+
+      /* ---- Partners Section ---- */
+      .partners-section { background: var(--off-white); padding: 80px 0; }
+      .partners-header { margin-bottom: 48px; }
+      .partners-header .mission-eyebrow { background: var(--gold); color: var(--white); }
+      .partners-header h2 { color: var(--primary); font-size: clamp(1.8rem, 3vw, 2.6rem); margin-top: 12px; }
+
+      .partners-section .carousel-btn {
+        background: var(--white);
+        color: var(--primary);
+      }
+      .partners-section .carousel-btn:hover {
+        background: var(--gold);
+        color: var(--white);
+      }
+      .partners-section .carousel-dot { background: var(--light-gray); }
+      .partners-section .carousel-dot.active { background: var(--gold); width: 24px; border-radius: 4px; }
+
+      /* 3 partner cards per slide */
+      .partners-slide-inner {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        padding: 8px 4px;
+      }
+      .partner-card {
+        background: var(--white);
+        border-radius: var(--radius-lg);
+        padding: 36px 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition);
+        border: 1px solid var(--light-gray);
+        text-align: center;
+      }
+      .partner-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); border-color: var(--gold); }
+      .partner-logo-box {
+        width: 80px;
+        height: 80px;
+        border-radius: var(--radius);
+        background: var(--off-white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        border: 1px solid var(--light-gray);
+        flex-shrink: 0;
+      }
+      .partner-name { font-size: 0.82rem; font-weight: 600; color: var(--gray); line-height: 1.4; }
+
+      /* ---- Team Section ---- */
+      .team-section { background: var(--white); padding: 96px 0; }
+      .team-header { text-align: center; margin-bottom: 60px; }
+      .team-header .mission-eyebrow { background: transparent; color: var(--primary); border: 2px solid var(--primary); font-size: 0.75rem; padding: 6px 18px; }
+      .team-header h2 { color: var(--primary); font-size: clamp(1.8rem, 3.5vw, 2.8rem); margin: 16px 0 12px; }
+      .team-header p { color: var(--gray); font-size: 1rem; }
+
+      .team-section .carousel-btn {
+        background: var(--primary);
+        color: var(--white);
+      }
+      .team-section .carousel-btn:hover {
+        background: var(--gold);
+        color: var(--white);
+      }
+      .team-section .carousel-dot { background: var(--light-gray); }
+      .team-section .carousel-dot.active { background: var(--primary); width: 24px; border-radius: 4px; }
+
+      /* 4 team cards per slide */
+      .team-slide-inner {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        padding: 8px 4px;
+      }
+      .team-card {
+        background: var(--off-white);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition);
+        text-align: center;
+        border: 1px solid var(--light-gray);
+      }
+      .team-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+      .team-card-banner { height: 80px; }
+      .team-card-banner.blue   { background: var(--primary); }
+      .team-card-banner.orange { background: var(--gold); }
+      .team-avatar-wrap {
+        margin-top: -40px;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        z-index: 2;
+        padding-bottom: 4px;
+      }
+      .team-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: var(--white);
+        border: 4px solid var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+      }
+      .team-avatar img { width: 100%; height: 100%; object-fit: cover; }
+      .team-body { padding: 12px 20px 24px; }
+      .team-name { font-size: 0.9rem; font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; line-height: 1.3; }
+      .team-role { font-size: 0.8rem; color: var(--gray); }
+
+      /* ---- CTA Band ---- */
+      .cta-band-home {
+        background: linear-gradient(135deg, var(--primary), #1a1a1a);
+        padding: 96px 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .cta-band-home::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -5%;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(244,121,32,0.12) 0%, transparent 65%);
+        border-radius: 50%;
+      }
+      .cta-band-home-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 48px;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 1;
+      }
+      .cta-band-home h2 { color: var(--white); margin-bottom: 12px; }
+      .cta-band-home p { color: rgba(255,255,255,0.65); max-width: 480px; font-size: 1.05rem; }
+      .cta-band-home-btns { display: flex; gap: 16px; flex-shrink: 0; flex-wrap: wrap; }
+
+      /* ---- Responsive ---- */
+      @media (max-width: 992px) {
+        .hero-banner-inner { grid-template-columns: 1fr; gap: 48px; }
+        .hero-img-wrap { display: none; }
+        .mission-grid { grid-template-columns: 1fr; gap: 48px; }
+        .activity-grid { grid-template-columns: repeat(2,1fr); }
+        .teaching-grid { grid-template-columns: repeat(2,1fr); }
+        .stats-strip-inner { grid-template-columns: repeat(2,1fr); }
+        .stats-strip-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .stats-strip-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.1); }
+        .stats-strip-item:nth-last-child(-n+2) { border-bottom: none; }
+        /* Carousels: 2 cols on tablet */
+        .testi-slide-inner  { grid-template-columns: repeat(2,1fr); }
+        .partners-slide-inner { grid-template-columns: repeat(2,1fr); }
+        .team-slide-inner   { grid-template-columns: repeat(2,1fr); }
+      }
+      @media (max-width: 576px) {
+        .hero-contact-strip { flex-direction: column; align-items: flex-start; gap: 14px; }
+        .activity-grid { grid-template-columns: 1fr; }
+        .teaching-grid { grid-template-columns: 1fr; }
+        .announcement-bar .ticker-inner { animation-duration: 18s; }
+        .cta-band-home-inner { flex-direction: column; text-align: center; }
+        .cta-band-home-btns { justify-content: center; }
+        /* Carousels: single col on mobile */
+        .testi-slide-inner  { grid-template-columns: 1fr; }
+        .partners-slide-inner { grid-template-columns: 1fr; }
+        .team-slide-inner   { grid-template-columns: repeat(2,1fr); }
+        /* Tighter arrow position on small screens */
+        .carousel-btn-prev { left: 0; }
+        .carousel-btn-next { right: 0; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- ANNOUNCEMENT BAR -->
+    <div class="announcement-bar" aria-label="Actualités">
+      <div class="ticker-inner">
+        <span>🎓 Dépistage des lacunes scolaires à partir de 3.000 FCFA</span>
+        <span>•</span>
+        <span>📖 Formation en lecture — 13 séances pour maîtriser la fluidité</span>
+        <span>•</span>
+        <span>➕ Remédiation mathématiques — 24 séances personnalisées</span>
+        <span>•</span>
+        <span>🏫 Partenariat établissements : 15% de commission reversée à l'école</span>
+        <span>•</span>
+        <span>📞 Inscriptions ouvertes — Lun–Sam 8h00–18h00 — +225 07 00 00 00 00</span>
+      </div>
+    </div>
+
+    <!-- HEADER -->
+    <header id="header">
+      <div class="container">
+        <nav class="nav-inner">
+          <a href="index.html" class="logo"><img src="assets/images/logo.jpeg" alt="Cabinet Orochi" style="height:44px;width:auto;border-radius:6px;" /></a>
+          <div class="nav-links">
+            <a href="index.html" class="active">Accueil</a>
+            <a href="about.html">À Propos</a>
+            <a href="services.html">Nos Services</a>
+            <a href="for-schools.html">Établissements</a>
+            <a href="pricing.html">Tarifs</a>
+            <a href="gallery.html">Galerie</a>
+            <a href="videos.html">Vidéos</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html" class="nav-cta btn">Inscription</a>
+          </div>
+          <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <nav class="mobile-menu" role="dialog" aria-label="Menu mobile">
+      <button class="mobile-menu-close" aria-label="Fermer">✕</button>
+      <a href="index.html">Accueil</a>
+      <a href="about.html">À Propos</a>
+      <a href="services.html">Nos Services</a>
+      <a href="for-schools.html">Établissements</a>
+      <a href="pricing.html">Tarifs</a>
+      <a href="gallery.html">Galerie</a>
+      <a href="videos.html">Vidéos</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html" style="color:var(--gold);font-weight:700;">Inscription</a>
+    </nav>
+
+    <!-- ======== HERO BANNER ======== -->
+    <section class="hero-banner">
+      <div class="container hero-banner-inner">
+        <!-- Left: Text -->
+        <div>
+          <div class="hero-badge fade-in">Côte d'Ivoire · Abidjan · Yopougon</div>
+          <h1 class="fade-in fade-in-delay-1">
+            Les meilleurs atouts du<br>
+            <span class="highlight">Cabinet Orochi</span>
+          </h1>
+          <ul class="fade-in fade-in-delay-2" style="margin-bottom:32px;display:flex;flex-direction:column;gap:10px;list-style:none;padding:0;">
+            <li style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.85);font-size:1rem;">
+              <span style="width:10px;height:10px;border-radius:50%;background:var(--gold);flex-shrink:0;"></span>
+              Dépistage des lacunes scolaires
+            </li>
+            <li style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.85);font-size:1rem;">
+              <span style="width:10px;height:10px;border-radius:50%;background:var(--gold);flex-shrink:0;"></span>
+              Formation en lecture &amp; compréhension
+            </li>
+            <li style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.85);font-size:1rem;">
+              <span style="width:10px;height:10px;border-radius:50%;background:var(--gold);flex-shrink:0;"></span>
+              Remédiation mathématiques &amp; dictée
+            </li>
+            <li style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.85);font-size:1rem;">
+              <span style="width:10px;height:10px;border-radius:50%;background:var(--gold);flex-shrink:0;"></span>
+              Perfectionnement anglais &amp; orientation
+            </li>
+          </ul>
+          <div class="hero-banner-btns fade-in fade-in-delay-2">
+            <a href="contact.html" class="btn btn-primary btn-lg">🔍 Faire dépister mon enfant</a>
+            <a href="services.html" class="btn btn-outline-white btn-lg">Découvrir nos services</a>
+          </div>
+          <div class="hero-contact-strip fade-in fade-in-delay-3">
+            <div class="hero-contact-item">
+              <div class="contact-icon">📞</div>
+              <div>
+                <strong>(+225) 07 00 00 00 00</strong>
+                <span>Appel &amp; WhatsApp</span>
+              </div>
+            </div>
+            <div class="hero-contact-item">
+              <div class="contact-icon">📍</div>
+              <div>
+                <strong>Yopougon, Abidjan</strong>
+                <span>Côte d'Ivoire</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Visual card -->
+        <div class="hero-img-wrap fade-in fade-in-delay-2">
+          <div class="hero-promo-badge">
+            <span class="promo-label">Dépistage</span>
+            <span class="promo-price">3.000F</span>
+            <span class="promo-sub">AU CABINET</span>
+          </div>
+          <div class="hero-main-img">
+            <div class="img-placeholder">
+              <span>🎓</span>
+              Photo de séance
+            </div>
+          </div>
+          <div class="hero-qr-badge">
+            <div class="qr-icon">📱</div>
+            <div class="qr-text">
+              <strong>www.cabinetoroochi.ci</strong>
+              <span>Inscriptions en ligne</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator">Défiler</div>
+    </section>
+
+    <!-- ======== MISSION / QUI SOMMES-NOUS ======== -->
+    <section class="mission-section" id="mission">
+      <div class="container">
+        <div class="mission-grid">
+          <!-- Left: Text -->
+          <div class="fade-in">
+            <div class="mission-eyebrow">Historique</div>
+            <h2>Qui sommes-nous ?</h2>
+            <p class="mission-text">
+              Le <strong>Cabinet Orochi</strong> est un centre de formation éducatif spécialisé dans le <strong>dépistage des lacunes scolaires</strong> et l'accompagnement pédagogique des apprenants en Côte d'Ivoire. Fondé à Yopougon, Abidjan, il répond à un besoin criant de soutien scolaire adapté et structuré pour les élèves du primaire au secondaire.
+            </p>
+            <p class="mission-text">
+              Notre approche repose sur un <strong>diagnostic précis</strong> des difficultés de chaque apprenant, suivi d'un programme de remédiation sur-mesure. Nous intervenons au cabinet, à domicile, et dans les établissements scolaires partenaires à travers tout Abidjan.
+            </p>
+            <p class="mission-text">
+              Nos formateurs certifiés déploient des techniques pédagogiques éprouvées pour la maîtrise de la lecture, de l'orthographe, des mathématiques et de l'anglais. Chaque programme est conçu pour construire des bases solides et une autonomie durable chez l'élève.
+            </p>
+            <p class="mission-text">
+              Le Cabinet Orochi est aujourd'hui un acteur incontournable de l'excellence scolaire en Côte d'Ivoire, accompagnant des centaines de familles et d'établissements chaque année.
+            </p>
+            <div style="margin-top:32px;display:flex;gap:16px;flex-wrap:wrap;">
+              <a href="about.html" class="btn btn-secondary">En savoir plus sur nous →</a>
+              <a href="contact.html" class="btn btn-outline" style="border-color:var(--gold);color:var(--gold);">Prendre rendez-vous</a>
+            </div>
+          </div>
+
+          <!-- Right: Image card -->
+          <div class="fade-in fade-in-delay-2">
+            <div class="mission-img-card">
+              <div class="mission-img-slot">
+                <span class="slot-emoji">🎓</span>
+                <span>Photo du fondateur / équipe</span>
+              </div>
+              <div class="mission-caption">
+                <div class="caption-avatar">CO</div>
+                <div>
+                  <strong>Direction — Cabinet Orochi</strong>
+                  <span>Centre de formation éducatif, Yopougon</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== ACTIVITÉS RÉCENTES ======== -->
+    <section class="activity-section" id="activites">
+      <div class="container">
+        <div class="activity-header fade-in">
+          <div class="mission-eyebrow" style="display:inline-block;">Activités</div>
+          <h2 style="color:var(--primary);margin-top:12px;">Nos activités récentes</h2>
+        </div>
+
+        <div class="activity-grid">
+          <div class="activity-card fade-in fade-in-delay-1">
+            <div class="activity-img">
+              <span class="act-emoji">📖</span>
+              <span>Séance de formation</span>
+            </div>
+            <div class="activity-body">
+              <h5>Séance de formation en lecture — Yopougon</h5>
+              <div class="activity-meta">
+                <span class="meta-icon">📅</span>
+                <span>Mars 2026</span>
+                <span>•</span>
+                <span class="meta-icon">🎓</span>
+                <span>Cabinet Orochi</span>
+              </div>
+            </div>
+          </div>
+          <div class="activity-card fade-in fade-in-delay-2">
+            <div class="activity-img">
+              <span class="act-emoji">🎤</span>
+              <span>Conférence conscientisation</span>
+            </div>
+            <div class="activity-body">
+              <h5>Conférence de conscientisation parentale — École partenaire</h5>
+              <div class="activity-meta">
+                <span class="meta-icon">📅</span>
+                <span>Fév. 2026</span>
+                <span>•</span>
+                <span class="meta-icon">🎓</span>
+                <span>Cabinet Orochi</span>
+              </div>
+            </div>
+          </div>
+          <div class="activity-card fade-in fade-in-delay-3">
+            <div class="activity-img">
+              <span class="act-emoji">➕</span>
+              <span>Remédiation maths</span>
+            </div>
+            <div class="activity-body">
+              <h5>Séance de remédiation mathématiques — CM1/CM2</h5>
+              <div class="activity-meta">
+                <span class="meta-icon">📅</span>
+                <span>Jan. 2026</span>
+                <span>•</span>
+                <span class="meta-icon">🎓</span>
+                <span>Cabinet Orochi</span>
+              </div>
+            </div>
+          </div>
+          <div class="activity-card fade-in fade-in-delay-1">
+            <div class="activity-img">
+              <span class="act-emoji">🌟</span>
+              <span>Rencontre métier</span>
+            </div>
+            <div class="activity-body">
+              <h5>Rencontre du Métier de Rêve — Orientation professionnelle</h5>
+              <div class="activity-meta">
+                <span class="meta-icon">📅</span>
+                <span>Déc. 2025</span>
+                <span>•</span>
+                <span class="meta-icon">🎓</span>
+                <span>Cabinet Orochi</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center fade-in" style="margin-top:8px;">
+          <a href="activites.html" class="btn btn-secondary btn-lg">Toutes nos activités →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== STATS STRIP ======== -->
+    <div class="stats-strip">
+      <div class="container">
+        <div class="stats-strip-inner">
+          <div class="stats-strip-item fade-in">
+            <span class="s-num" data-counter="3000" data-suffix="F">3.000 F</span>
+            <span class="s-lbl">Dépistage au Cabinet</span>
+          </div>
+          <div class="stats-strip-item fade-in fade-in-delay-1">
+            <span class="s-num" data-counter="25" data-suffix="%">25%</span>
+            <span class="s-lbl">Remise forfait 6 séances</span>
+          </div>
+          <div class="stats-strip-item fade-in fade-in-delay-2">
+            <span class="s-num" data-counter="9" data-suffix="+">9+</span>
+            <span class="s-lbl">Services pédagogiques</span>
+          </div>
+          <div class="stats-strip-item fade-in fade-in-delay-3">
+            <span class="s-num" data-counter="15" data-suffix="%">15%</span>
+            <span class="s-lbl">Commission école partenaire</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======== TEACHING / NIVEAUX ET PRESTATIONS ======== -->
+    <section class="teaching-section" id="niveaux">
+      <div class="container">
+        <div class="teaching-header fade-in">
+          <div class="mission-eyebrow">Enseignement</div>
+          <h2 style="margin-top:14px;">Les niveaux et prestations<br>pris en compte</h2>
+        </div>
+
+        <div class="teaching-grid">
+          <!-- Cycle Primaire -->
+          <div class="teaching-card fade-in fade-in-delay-1">
+            <div class="teaching-card-bg"></div>
+            <div class="teaching-card-content">
+              <div class="t-icon">📚</div>
+              <div class="t-level">Niveau 01</div>
+              <h4>Cycle primaire</h4>
+              <a href="services.html" class="t-cta">En savoir plus →</a>
+            </div>
+          </div>
+          <!-- Cycle Secondaire -->
+          <div class="teaching-card fade-in fade-in-delay-2">
+            <div class="teaching-card-bg orange"></div>
+            <div class="teaching-card-content">
+              <div class="t-icon">🏫</div>
+              <div class="t-level">Niveau 02</div>
+              <h4>Cycle secondaire</h4>
+              <a href="services.html" class="t-cta">En savoir plus →</a>
+            </div>
+          </div>
+          <!-- Enseignement Technique -->
+          <div class="teaching-card fade-in fade-in-delay-3">
+            <div class="teaching-card-bg"></div>
+            <div class="teaching-card-content">
+              <div class="t-icon">🔧</div>
+              <div class="t-level">Niveau 03</div>
+              <h4>Enseignement technique</h4>
+              <a href="services.html" class="t-cta">En savoir plus →</a>
+            </div>
+          </div>
+          <!-- Formation Professionnelle -->
+          <div class="teaching-card fade-in fade-in-delay-1">
+            <div class="teaching-card-bg dark"></div>
+            <div class="teaching-card-content">
+              <div class="t-icon">💼</div>
+              <div class="t-level">Niveau 04</div>
+              <h4>Formation professionnelle</h4>
+              <a href="services.html" class="t-cta">En savoir plus →</a>
+            </div>
+          </div>
+          <!-- Enseignement Supérieur -->
+          <div class="teaching-card fade-in fade-in-delay-2">
+            <div class="teaching-card-bg orange"></div>
+            <div class="teaching-card-content">
+              <div class="t-icon">🎓</div>
+              <div class="t-level">Niveau 05</div>
+              <h4>Enseignement supérieur</h4>
+              <a href="services.html" class="t-cta">En savoir plus →</a>
+            </div>
+          </div>
+          <!-- Centres de Formation -->
+          <div class="teaching-card fade-in fade-in-delay-3">
+            <div class="teaching-card-bg"></div>
+            <div class="teaching-card-content">
+              <div class="t-icon">📋</div>
+              <div class="t-level">Prestation</div>
+              <h4>Les centres de formations</h4>
+              <a href="for-schools.html" class="t-cta">En savoir plus →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="teaching-tarifs-btn fade-in">
+          <a href="pricing.html" class="btn btn-primary btn-lg">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right:4px;"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+            Voir nos tarifs
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== PARTNERS CAROUSEL ======== -->
+    <section class="partners-section" id="partenaires">
+      <div class="container">
+        <div class="partners-header fade-in">
+          <div class="mission-eyebrow">Partenaires</div>
+          <h2>Ils nous font confiance</h2>
+        </div>
+
+        <div class="carousel-wrap fade-in fade-in-delay-1" data-carousel="partners" data-interval="3500">
+          <button class="carousel-btn carousel-btn-prev" aria-label="Précédent">&#8592;</button>
+          <button class="carousel-btn carousel-btn-next" aria-label="Suivant">&#8594;</button>
+
+          <div class="carousel-viewport">
+            <div class="carousel-track">
+
+              <!-- Slide 1: Partners 1-3 -->
+              <div class="carousel-slide">
+                <div class="partners-slide-inner">
+                  <div class="partner-card">
+                    <div class="partner-logo-box">🏫</div>
+                    <div class="partner-name">Association Diocésaine de l'École Catholique</div>
+                  </div>
+                  <div class="partner-card">
+                    <div class="partner-logo-box">📚</div>
+                    <div class="partner-name">DELC — Direction des Écoles, Lycées et Collèges</div>
+                  </div>
+                  <div class="partner-card">
+                    <div class="partner-logo-box">🤝</div>
+                    <div class="partner-name">FENEPLACI</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2: Partners 4-6 -->
+              <div class="carousel-slide">
+                <div class="partners-slide-inner">
+                  <div class="partner-card">
+                    <div class="partner-logo-box">🏆</div>
+                    <div class="partner-name">Lycée d'Excellence Alassane Ouattara</div>
+                  </div>
+                  <div class="partner-card">
+                    <div class="partner-logo-box">📐</div>
+                    <div class="partner-name">EduGestion Côte d'Ivoire</div>
+                  </div>
+                  <div class="partner-card">
+                    <div class="partner-logo-box">🎓</div>
+                    <div class="partner-name">Fédération des Parents d'Élèves de CI</div>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- /track -->
+          </div><!-- /viewport -->
+
+          <div class="carousel-dots"></div>
+        </div>
+
+        <div class="text-center fade-in" style="margin-top:36px;">
+          <a href="for-schools.html" class="btn btn-secondary">Devenir partenaire →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== TEAM CAROUSEL ======== -->
+    <section class="team-section" id="equipe">
+      <div class="container">
+        <div class="team-header fade-in">
+          <div class="mission-eyebrow">Notre Équipe</div>
+          <h2>Les talents derrière le projet</h2>
+          <p>Des professionnels passionnés à votre service</p>
+        </div>
+
+        <div class="carousel-wrap fade-in fade-in-delay-1" data-carousel="team" data-interval="4000">
+          <button class="carousel-btn carousel-btn-prev" aria-label="Précédent">&#8592;</button>
+          <button class="carousel-btn carousel-btn-next" aria-label="Suivant">&#8594;</button>
+
+          <div class="carousel-viewport">
+            <div class="carousel-track">
+
+              <!-- Slide 1: Core team -->
+              <div class="carousel-slide">
+                <div class="team-slide-inner">
+                  <div class="team-card">
+                    <div class="team-card-banner blue"></div>
+                    <div class="team-avatar-wrap">
+                      <div class="team-avatar" title="Directeur Général">👨‍💼</div>
+                    </div>
+                    <div class="team-body">
+                      <div class="team-name">Directeur Général</div>
+                      <div class="team-role">Chief Executive Officer</div>
+                    </div>
+                  </div>
+                  <div class="team-card">
+                    <div class="team-card-banner orange"></div>
+                    <div class="team-avatar-wrap">
+                      <div class="team-avatar" title="Coordinateur Pédagogique">👨‍🏫</div>
+                    </div>
+                    <div class="team-body">
+                      <div class="team-name">Coordinateur Pédagogique</div>
+                      <div class="team-role">Project Management Officer</div>
+                    </div>
+                  </div>
+                  <div class="team-card">
+                    <div class="team-card-banner blue"></div>
+                    <div class="team-avatar-wrap">
+                      <div class="team-avatar" title="Responsable Formation">👩‍🏫</div>
+                    </div>
+                    <div class="team-body">
+                      <div class="team-name">Responsable Formation</div>
+                      <div class="team-role">Scrum Master</div>
+                    </div>
+                  </div>
+                  <div class="team-card">
+                    <div class="team-card-banner orange"></div>
+                    <div class="team-avatar-wrap">
+                      <div class="team-avatar" title="Relations Externes">🤝</div>
+                    </div>
+                    <div class="team-body">
+                      <div class="team-name">Relations Externes</div>
+                      <div class="team-role">External Relations Officer</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2: Extended team -->
+              <div class="carousel-slide">
+                <div class="team-slide-inner">
+                  <div class="team-card">
+                    <div class="team-card-banner orange"></div>
+                    <div class="team-avatar-wrap">
+                      <div class="team-avatar" title="Formateur Senior">👨‍🎓</div>
+                    </div>
+                    <div class="team-body">
+                      <div class="team-name">Formateur Senior</div>
+                      <div class="team-role">Spécialiste Lecture</div>
+                    </div>
+                  </div>
+                  <div class="team-card">
+                    <div class="team-card-banner blue"></div>
+                    <div class="team-avatar-wrap">
+                      <div class="team-avatar" title="Formatrice Mathématiques">👩‍🎓</div>
+                    </div>
+                    <div class="team-body">
+                      <div class="team-name">Formatrice</div>
+                      <div class="team-role">Spécialiste Mathématiques</div>
+                    </div>
+                  </div>
+                  <div class="team-card">
+                    <div class="team-card-banner orange"></div>
+                    <div class="team-avatar-wrap">
+                      <div class="team-avatar" title="Responsable Communication">📢</div>
+                    </div>
+                    <div class="team-body">
+                      <div class="team-name">Chargé de Communication</div>
+                      <div class="team-role">Marketing &amp; Réseaux</div>
+                    </div>
+                  </div>
+                  <div class="team-card">
+                    <div class="team-card-banner blue"></div>
+                    <div class="team-avatar-wrap">
+                      <div class="team-avatar" title="Conseiller en Orientation">🌟</div>
+                    </div>
+                    <div class="team-body">
+                      <div class="team-name">Conseiller Orientation</div>
+                      <div class="team-role">Rencontre Métier de Rêve</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- /track -->
+          </div><!-- /viewport -->
+
+          <div class="carousel-dots"></div>
+        </div>
+
+        <div class="text-center fade-in" style="margin-top:48px;">
+          <a href="about.html" class="btn btn-secondary btn-lg">Découvrir notre équipe →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== TESTIMONIALS CAROUSEL ======== -->
+    <section class="testimonials-section" id="temoignages">
+      <div class="container">
+        <div class="section-header fade-in" style="margin-bottom:56px;">
+          <span class="eyebrow">Témoignages</span>
+          <h2>Ce que disent les familles</h2>
+          <p>La satisfaction de nos apprenants et de leurs parents est notre plus grande récompense.</p>
+          <div class="divider"></div>
+        </div>
+
+        <div class="carousel-wrap fade-in fade-in-delay-1" data-carousel="testimonials" data-interval="5000">
+          <button class="carousel-btn carousel-btn-prev" aria-label="Précédent">&#8592;</button>
+          <button class="carousel-btn carousel-btn-next" aria-label="Suivant">&#8594;</button>
+
+          <div class="carousel-viewport">
+            <div class="carousel-track">
+
+              <!-- Slide 1 -->
+              <div class="carousel-slide">
+                <div class="testi-slide-inner">
+                  <div class="testi-card">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-text">Mon fils était en grande difficulté en mathématiques. Après 24 séances au cabinet, il a obtenu 14/20 à son contrôle. Le dépistage initial a vraiment tout changé !</p>
+                    <div class="testi-author">
+                      <div class="testi-avatar">AM</div>
+                      <div>
+                        <div class="testi-name">Adjoua M.</div>
+                        <div class="testi-loc">Parent d'élève — Cocody</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="testi-card">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-text">Le programme à domicile à Yopougon est très pratique. Le formateur est ponctuel, professionnel. Ma fille a progressé en lecture en seulement 3 séances !</p>
+                    <div class="testi-author">
+                      <div class="testi-avatar orange">KD</div>
+                      <div>
+                        <div class="testi-name">Koffi D.</div>
+                        <div class="testi-loc">Parent d'élève — Yopougon</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="testi-card">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-text">En tant que directeur d'école, le partenariat avec le Cabinet Orochi nous a permis d'offrir un soutien de qualité à nos élèves tout en générant une commission appréciable.</p>
+                    <div class="testi-author">
+                      <div class="testi-avatar">BS</div>
+                      <div>
+                        <div class="testi-name">Boua S.</div>
+                        <div class="testi-loc">Directeur — Établissement Abobo</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="carousel-slide">
+                <div class="testi-slide-inner">
+                  <div class="testi-card">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-text">La séance de conscientisation a ouvert les yeux de mon fils. Il comprend maintenant l'importance de l'étude. Sa moyenne est passée de 6 à 13 en deux mois !</p>
+                    <div class="testi-author">
+                      <div class="testi-avatar orange">NK</div>
+                      <div>
+                        <div class="testi-name">N'Guessan K.</div>
+                        <div class="testi-loc">Parent d'élève — Marcory</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="testi-card">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-text">Le programme de perfectionnement en dictée est remarquable. Ma fille ne fait quasiment plus de fautes depuis la fin des 25 séances. Excellent rapport qualité-prix !</p>
+                    <div class="testi-author">
+                      <div class="testi-avatar">FT</div>
+                      <div>
+                        <div class="testi-name">Fatou T.</div>
+                        <div class="testi-loc">Parent d'élève — Treichville</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="testi-card">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-text">La Rencontre du Métier de Rêve a été une révélation pour mon fils de 3ème. Il a maintenant un projet clair pour son avenir et une motivation que je n'avais jamais vue auparavant.</p>
+                    <div class="testi-author">
+                      <div class="testi-avatar orange">OB</div>
+                      <div>
+                        <div class="testi-name">Oumar B.</div>
+                        <div class="testi-loc">Parent d'élève — Plateau</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="carousel-slide">
+                <div class="testi-slide-inner">
+                  <div class="testi-card">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-text">Nous avons intégré le Cabinet Orochi dans notre école et les résultats sont impressionnants. Les élèves progressent vite et les parents sont ravis. La commission est un vrai plus !</p>
+                    <div class="testi-author">
+                      <div class="testi-avatar">YL</div>
+                      <div>
+                        <div class="testi-name">Yao L.</div>
+                        <div class="testi-loc">Principal — Collège Privé Adjamé</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="testi-card">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-text">Le bilan de conscience a permis à notre fille de comprendre ses propres blocages. Après 13 séances de lecture, elle lit maintenant couramment et avec plaisir. Merci Cabinet Orochi !</p>
+                    <div class="testi-author">
+                      <div class="testi-avatar orange">RA</div>
+                      <div>
+                        <div class="testi-name">Ramata A.</div>
+                        <div class="testi-loc">Parent d'élève — Yopougon</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="testi-card">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-text">Les formateurs sont extrêmement bien formés et patients. Mon fils qui refusait de travailler à la maison fait maintenant ses devoirs seul tous les soirs. Vraiment impressionnant !</p>
+                    <div class="testi-author">
+                      <div class="testi-avatar">MC</div>
+                      <div>
+                        <div class="testi-name">Mariam C.</div>
+                        <div class="testi-loc">Parent d'élève — Koumassi</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- /track -->
+          </div><!-- /viewport -->
+
+          <div class="carousel-dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== CTA BAND ======== -->
+    <section class="cta-band-home">
+      <div class="container">
+        <div class="cta-band-home-inner">
+          <div class="fade-in">
+            <h2>Prêt à booster les résultats<br>de votre enfant ?</h2>
+            <p>Commencez par un dépistage des lacunes. Une seule séance suffit pour établir un plan d'action personnalisé et durable.</p>
+          </div>
+          <div class="cta-band-home-btns fade-in fade-in-delay-2">
+            <a href="contact.html" class="btn btn-primary btn-lg">🔍 Prendre rendez-vous</a>
+            <a href="pricing.html" class="btn btn-outline-white btn-lg">Voir les tarifs</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== FOOTER ======== -->
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <a href="index.html" class="logo" style="display:inline-flex;margin-bottom:20px;"><img src="assets/images/logo.jpeg" alt="Cabinet Orochi" style="height:44px;width:auto;border-radius:6px;" /></a>
+            <p class="footer-desc">Centre de formation éducatif spécialisé dans le dépistage des lacunes scolaires et l'accompagnement pédagogique des apprenants en Côte d'Ivoire.</p>
+            <div class="footer-social">
+              <a href="https://www.facebook.com/cabinetoroochi" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook" title="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+              <a href="https://www.tiktok.com/@cabinetoroochi" target="_blank" rel="noopener" class="social-btn" aria-label="TikTok" title="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+              <a href="https://www.instagram.com/cabinetoroochi" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram" title="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+              <a href="https://wa.me/22507000000" target="_blank" rel="noopener" class="social-btn" aria-label="WhatsApp" title="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h5>Navigation</h5>
+            <nav class="footer-links">
+              <a href="index.html">Accueil</a>
+              <a href="about.html">À Propos</a>
+              <a href="services.html">Nos Services</a>
+              <a href="for-schools.html">Établissements</a>
+              <a href="pricing.html">Tarifs</a>
+              <a href="activites.html">Activités</a>
+              <a href="gallery.html">Galerie</a>
+              <a href="videos.html">Vidéos</a>
+              <a href="blog.html">Blog / Ressources</a>
+            </nav>
+          </div>
+          <div class="footer-col">
+            <h5>Réseaux sociaux</h5>
+            <nav class="footer-links">
+              <a href="https://www.facebook.com/cabinetoroochi" target="_blank" rel="noopener">Facebook</a>
+              <a href="https://www.tiktok.com/@cabinetoroochi" target="_blank" rel="noopener">TikTok</a>
+              <a href="https://www.instagram.com/cabinetoroochi" target="_blank" rel="noopener">Instagram</a>
+              <a href="https://wa.me/22507000000" target="_blank" rel="noopener">WhatsApp</a>
+            </nav>
+          </div>
+          <div class="footer-col">
+            <h5>Contact</h5>
+            <div class="footer-contact-item"><span class="icon">📍</span><span>Yopougon, Abidjan<br>Côte d'Ivoire</span></div>
+            <div class="footer-contact-item"><span class="icon">📞</span><span>+225 07 00 00 00 00</span></div>
+            <div class="footer-contact-item"><span class="icon">✉️</span><span>contact@cabinetoroochi.ci</span></div>
+            <div class="footer-contact-item"><span class="icon">🕐</span><span>Lun–Sam : 8h00–18h00</span></div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 Cabinet Orochi. Tous droits réservés.</p>
+          <p>Conçu pour l'excellence scolaire en Côte d'Ivoire 🇨🇮</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button class="back-to-top" aria-label="Retour en haut"
+      style="position:fixed;bottom:90px;right:24px;width:44px;height:44px;border-radius:50%;
+             background:var(--gold);color:var(--white);font-size:1.2rem;display:none;
+             align-items:center;justify-content:center;box-shadow:var(--shadow-md);
+             transition:var(--transition);z-index:900;border:none;cursor:pointer;">↑</button>
+    <style>.back-to-top.visible{display:flex!important;}</style>
+
+    <script src="js/main.js"></script>
+    <script>
+    /* ==============================================
+       CABINET OROCHI — SHARED CAROUSEL ENGINE
+       Auto-play, prev/next arrows, dot indicators
+       Pauses on hover/focus, resumes on leave
+       ============================================== */
+    (function () {
+      'use strict';
+
+      function initCarousel(wrap) {
+        var track    = wrap.querySelector('.carousel-track');
+        var slides   = wrap.querySelectorAll('.carousel-slide');
+        var dotsWrap = wrap.querySelector('.carousel-dots');
+        var btnPrev  = wrap.querySelector('.carousel-btn-prev');
+        var btnNext  = wrap.querySelector('.carousel-btn-next');
+        var total    = slides.length;
+        var current  = 0;
+        var interval = parseInt(wrap.dataset.interval || '4000', 10);
+        var timer    = null;
+        var isHovered = false;
+
+        if (total <= 1) {
+          if (btnPrev) btnPrev.style.display = 'none';
+          if (btnNext) btnNext.style.display = 'none';
+          return;
+        }
+
+        /* --- Build dots --- */
+        for (var i = 0; i < total; i++) {
+          var dot = document.createElement('button');
+          dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+          dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+          dot.dataset.idx = i;
+          dotsWrap.appendChild(dot);
+        }
+        var dots = dotsWrap.querySelectorAll('.carousel-dot');
+
+        /* --- Go to slide --- */
+        function goTo(idx, animate) {
+          if (animate === false) {
+            track.style.transition = 'none';
+          } else {
+            track.style.transition = 'transform 0.55s cubic-bezier(0.4, 0, 0.2, 1)';
+          }
+          current = (idx + total) % total;
+          track.style.transform = 'translateX(-' + current * 100 + '%)';
+          dots.forEach(function (d, n) {
+            d.classList.toggle('active', n === current);
+          });
+        }
+
+        /* --- Arrow buttons --- */
+        btnPrev.addEventListener('click', function () {
+          goTo(current - 1);
+          resetTimer();
+        });
+        btnNext.addEventListener('click', function () {
+          goTo(current + 1);
+          resetTimer();
+        });
+
+        /* --- Dot clicks --- */
+        dotsWrap.addEventListener('click', function (e) {
+          var dot = e.target.closest('.carousel-dot');
+          if (!dot) return;
+          goTo(parseInt(dot.dataset.idx, 10));
+          resetTimer();
+        });
+
+        /* --- Keyboard navigation --- */
+        wrap.addEventListener('keydown', function (e) {
+          if (e.key === 'ArrowLeft')  { goTo(current - 1); resetTimer(); }
+          if (e.key === 'ArrowRight') { goTo(current + 1); resetTimer(); }
+        });
+        wrap.setAttribute('tabindex', '0');
+
+        /* --- Touch/swipe support --- */
+        var touchStartX = 0;
+        wrap.addEventListener('touchstart', function (e) {
+          touchStartX = e.changedTouches[0].clientX;
+        }, { passive: true });
+        wrap.addEventListener('touchend', function (e) {
+          var dx = e.changedTouches[0].clientX - touchStartX;
+          if (Math.abs(dx) > 40) {
+            goTo(dx < 0 ? current + 1 : current - 1);
+            resetTimer();
+          }
+        }, { passive: true });
+
+        /* --- Auto-play --- */
+        function startTimer() {
+          timer = setInterval(function () {
+            if (!isHovered) goTo(current + 1);
+          }, interval);
+        }
+
+        function resetTimer() {
+          clearInterval(timer);
+          startTimer();
+        }
+
+        wrap.addEventListener('mouseenter', function () { isHovered = true; });
+        wrap.addEventListener('mouseleave', function () { isHovered = false; });
+        wrap.addEventListener('focusin',    function () { isHovered = true; });
+        wrap.addEventListener('focusout',   function () { isHovered = false; });
+
+        /* --- Pause when tab is hidden --- */
+        document.addEventListener('visibilitychange', function () {
+          if (document.hidden) {
+            clearInterval(timer);
+          } else {
+            resetTimer();
+          }
+        });
+
+        /* --- Init --- */
+        goTo(0, false);
+        startTimer();
+      }
+
+      /* Boot all carousels on DOMContentLoaded */
+      function bootAll() {
+        document.querySelectorAll('[data-carousel]').forEach(initCarousel);
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', bootAll);
+      } else {
+        bootAll();
+      }
+    })();
+    </script>
+  </body>
+</html>

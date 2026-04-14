@@ -1,0 +1,147 @@
+/* =============================================
+   CABINET OROCHI — RESPONSIVE STYLESHEET
+   Breakpoints: 1200px | 992px | 768px | 576px
+   ============================================= */
+
+/* ---- Large Desktop (1200px+) ---- */
+@media (min-width: 1200px) {
+  .container { padding: 0 32px; }
+}
+
+/* ---- Desktop (992px - 1199px) ---- */
+@media (max-width: 1199px) {
+  .footer-grid { grid-template-columns: 1.5fr 1fr 1fr 1.5fr; gap: 32px; }
+  .hero-stats { gap: 24px; }
+}
+
+/* ---- Tablet Landscape (992px and below) ---- */
+@media (max-width: 992px) {
+  .section { padding: 64px 0; }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+
+  .nav-links, .nav-actions { display: none; }
+  .hamburger { display: flex; }
+
+  .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+  .hero-visual { display: none; }
+  .hero { min-height: 90vh; }
+  .hero h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); }
+
+  .process-steps { flex-direction: column; }
+  .process-step { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .process-step:last-child { border-bottom: none; }
+  .process-arrow { display: none; }
+
+  .about-mission-grid { grid-template-columns: 1fr; gap: 40px; }
+
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .footer-grid > :first-child { grid-column: 1 / -1; }
+
+  .cta-band-inner { flex-direction: column; text-align: center; }
+  .cta-band-btns { justify-content: center; }
+
+  .stats-banner .flex-between { flex-wrap: wrap; justify-content: center; }
+
+  .contact-form { padding: 28px; }
+}
+
+/* ---- Tablet Portrait (768px and below) ---- */
+@media (max-width: 768px) {
+  .section { padding: 48px 0; }
+  .section-header { margin-bottom: 40px; }
+
+  .grid-2 { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr; }
+
+  .hero { min-height: 85vh; padding-top: 80px; }
+  .hero h1 { font-size: clamp(1.6rem, 6vw, 2.5rem); }
+  .hero-desc { font-size: 1rem; }
+  .hero-btns { flex-direction: column; align-items: flex-start; }
+  .hero-stats { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 16px; }
+
+  .offer-card { padding: 28px 24px; }
+  .btn-lg { padding: 14px 28px; font-size: 0.95rem; }
+
+  .page-header { padding: 120px 0 56px; }
+  .page-header h1 { font-size: clamp(1.6rem, 5vw, 2.2rem); }
+
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid > :first-child { grid-column: 1 / -1; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+
+  .about-stat-row { flex-wrap: wrap; }
+  .about-stat { min-width: calc(50% - 12px); }
+
+  .form-row { grid-template-columns: 1fr; }
+
+  .school-pricing-table { font-size: 0.85rem; }
+  .school-pricing-table th, .school-pricing-table td { padding: 10px 12px; }
+
+  .commission-banner { padding: 28px; }
+  .commission-banner .pct { font-size: 3rem; }
+}
+
+/* ---- Mobile (576px and below) ---- */
+@media (max-width: 576px) {
+  .container { padding: 0 16px; }
+  .section { padding: 40px 0; }
+
+  .hero { padding-top: 72px; }
+  .hero h1 { font-size: 1.75rem; }
+  .hero-desc { font-size: 0.95rem; }
+  .hero-btns .btn { width: 100%; justify-content: center; }
+  .hero-stats { gap: 12px; }
+  .stat-number { font-size: 1.4rem; }
+
+  .section-header h2 { font-size: 1.5rem; }
+  .grid-4 { grid-template-columns: 1fr; }
+
+  .offer-card { padding: 24px 20px; }
+  .card { padding: 24px; }
+
+  .contact-form { padding: 24px 20px; }
+  .contact-info-card { padding: 28px 24px; }
+
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-grid > :first-child { grid-column: auto; }
+
+  .cta-band { padding: 56px 0; }
+  .cta-band h2 { font-size: 1.5rem; }
+  .cta-band-btns { flex-direction: column; width: 100%; }
+  .cta-band-btns .btn { width: 100%; justify-content: center; }
+
+  .process-step { padding: 28px 24px; }
+
+  .about-stat-row { gap: 12px; }
+  .about-stat { min-width: calc(50% - 6px); }
+
+  .service-card-header, .service-card-body { padding: 22px; }
+
+  .blog-card-img { height: 180px; }
+  .blog-card-body { padding: 20px; }
+
+  .btn { padding: 12px 24px; font-size: 0.9rem; }
+  .btn-sm { padding: 9px 18px; }
+  .btn-lg { padding: 14px 24px; font-size: 0.95rem; }
+
+  .school-pricing-table-wrap { overflow-x: auto; }
+  .school-pricing-table { min-width: 500px; }
+}
+
+/* ---- Extra small (400px and below) ---- */
+@media (max-width: 400px) {
+  .hero h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.4rem; }
+  .about-stat-row { flex-direction: column; }
+  .about-stat { min-width: 100%; }
+}
+
+/* ---- Print ---- */
+@media print {
+  #header, #footer, .hero-btns, .cta-band, .scroll-indicator { display: none !important; }
+  body { font-size: 12pt; }
+  .container { max-width: 100%; padding: 0; }
+  .page-header { padding: 24px 0; background: none; }
+  .page-header h1 { color: #000; }
+  .card, .offer-card { box-shadow: none; border: 1px solid #ddd; }
+}
