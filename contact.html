@@ -144,7 +144,7 @@
                     <option value="">Choisir le mode de formation</option>
                     <option value="cabinet">Au Cabinet Orochi</option>
                     <option value="yopougon">À Domicile — Yopougon</option>
-                    <option value="hors">À Domicile — Hors Yopougon</option>
+                    <option value="hors yopougon">À Domicile — Hors Yopougon</option>
                   </select>
                 </div>
                 <div class="form-group">
@@ -292,7 +292,7 @@
                 <div class="form-row">
                   <div class="form-group">
                     <label for="school-location">Localisation <span class="req">*</span></label>
-                    <select id="school-location" name="school-location" class="form-control" required>
+                    <select id="school-location" name="Localisation" class="form-control" required>
                       <option value="">Sélectionner</option>
                       <option value="cabinet">Yopougon</option>
                       <option value="hors">Hors Yopougon</option>
@@ -300,7 +300,7 @@
                   </div>
                   <div class="form-group">
                     <label for="school-students">Nombre d'élèves concernés <span class="req">*</span></label>
-                    <input type="number" id="school-students" name="school-students" class="form-control" placeholder="Minimum 50 élèves" min="1" required />
+                    <input type="number" id="school-students" name="Nombre d'élèves concernés" class="form-control" placeholder="Minimum 50 élèves" min="1" required />
                     <span id="students-error" style="display:block;font-size:0.78rem;color:#dc3545;margin-top:4px;"></span>
                   </div>
                 </div>
@@ -308,7 +308,7 @@
                 <div id="formateurs-note" class="info-banner" style="display:none;margin-bottom:20px;padding:14px 18px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.3);border-radius:var(--radius);font-size:0.9rem;color:var(--primary);"></div>
                 <div class="form-group">
                   <label for="school-service">Service souhaité <span class="req">*</span></label>
-                  <select id="school-service" name="school-service" class="form-control" required>
+                  <select id="school-service" name="Service souhaité" class="form-control" required>
                     <option value="">Sélectionner un service</option>
                     <option value="depistage">Dépistage des lacunes</option>
                     <option value="conference">Conscientisation (conférence)</option>
@@ -320,7 +320,7 @@
                 <div id="school-summary" class="school-summary-box" style="display:none;margin-bottom:20px;padding:20px;background:var(--off-white);border-radius:var(--radius);border:1px solid var(--light-gray);"></div>
                 <div class="form-group">
                   <label for="school-message">Informations complémentaires</label>
-                  <textarea id="school-message" name="school-message" class="form-control" rows="4" placeholder="Niveaux concernés, contraintes horaires, objectifs pédagogiques..."></textarea>
+                  <textarea id="school-message" name="Informations complémentaires" class="form-control" rows="4" placeholder="Niveaux concernés, contraintes horaires, objectifs pédagogiques..."></textarea>
                 </div>
                 <div class="form-submit-row">
                   <p class="form-note">⚠ Minimum 50 élèves requis par classe constituée.</p>
@@ -393,20 +393,20 @@
                 <div class="form-row">
                   <div class="form-group">
                     <label for="gen-nom">Nom & Prénom <span class="req">*</span></label>
-                    <input type="text" id="gen-nom" name="gen-nom" class="form-control" placeholder="Votre nom complet" required />
+                    <input type="text" id="gen-nom" name="Nom" class="form-control" placeholder="Votre nom complet" required />
                   </div>
                   <div class="form-group">
                     <label for="gen-tel">Téléphone <span class="req">*</span></label>
-                    <input type="tel" id="gen-tel" name="gen-tel" class="form-control" placeholder="+225 07 00 00 00 00" required />
+                    <input type="tel" id="gen-tel" name="Numéro" class="form-control" placeholder="+225 07 00 00 00 00" required />
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="gen-email">Adresse e-mail <span class="req">*</span></label>
-                  <input type="email" id="gen-email" name="gen-email" class="form-control" placeholder="votre@email.com" required />
+                  <input type="email" id="gen-email" name="Email" class="form-control" placeholder="votre@email.com" required />
                 </div>
                 <div class="form-group">
                   <label for="gen-sujet">Sujet <span class="req">*</span></label>
-                  <select id="gen-sujet" name="gen-sujet" class="form-control" required>
+                  <select id="gen-sujet" name="Sujet" class="form-control" required>
                     <option value="">Sélectionner un sujet</option>
                     <option>Informations sur les services</option>
                     <option>Informations sur les tarifs</option>
@@ -417,7 +417,7 @@
                 </div>
                 <div class="form-group">
                   <label for="gen-message">Votre message <span class="req">*</span></label>
-                  <textarea id="gen-message" name="gen-message" class="form-control" rows="6" placeholder="Décrivez votre demande en détail..." required></textarea>
+                  <textarea id="gen-message" name="Méssage" class="form-control" rows="6" placeholder="Décrivez votre demande en détail..." required></textarea>
                 </div>
                 <div class="form-submit-row">
                   <p class="form-note">🔒 Réponse sous 24–48h ouvrables.</p>
