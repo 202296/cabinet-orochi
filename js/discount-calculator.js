@@ -218,11 +218,7 @@
               </div>` : ''}
               ${s.seanceEleve ? `
               <div class="pricing-detail-item">
-                <span class="d-label">Séance (apprenant)</span>
-                <span class="d-value">${fmt(s.seanceEleve)}</span>
-              </div>
-              <div class="pricing-detail-item">
-                <span class="d-label">Séance (non-apprenant)</span>
+                <span class="d-label">Séance</span>
                 <span class="d-value">${fmt(s.seanceNonEleve)}</span>
               </div>` : ''}
             </div>
