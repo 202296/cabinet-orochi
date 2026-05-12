@@ -85,6 +85,7 @@
 @media (max-width: 576px) {
   .container { padding: 0 16px; }
   .section { padding: 40px 0; }
+  .logo img { height: 52px; max-height: 52px; }
 
   .hero { padding-top: 72px; }
   .hero h1 { font-size: 1.75rem; }

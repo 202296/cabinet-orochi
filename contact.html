@@ -2,7 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="assets/images/logo.jpeg" type="image/jpeg" />
+    <link rel="icon" href="assets/images/logo-new.jpg" type="image/jpeg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Contactez le Cabinet Orochi — Inscriptions, demandes de devis et renseignements pour parents et établissements scolaires." />
     <title>Contact & Inscription — Cabinet Orochi</title>
@@ -29,7 +29,7 @@
     <header id="header">
       <div class="container">
         <nav class="nav-inner">
-          <a href="index.html" class="logo"><img src="assets/images/logo.jpeg" alt="Cabinet Orochi" style="height:44px;width:auto;border-radius:6px;" /></a>
+          <a href="index.html" class="logo"><img src="assets/images/logo-new.jpg" alt="Cabinet Orochi" style="height:64px;width:auto;border-radius:6px;" /></a>
           <div class="nav-links">
             <a href="index.html">Accueil</a>
             <a href="about.html">À Propos</a>
@@ -97,7 +97,7 @@
 
             <!-- Form -->
             <div class="contact-form fade-in">
-              <h3 style="color:var(--primary);margin-bottom:8px;">Inscription d'un élève</h3>
+              <h3 style="color:var(--primary);margin-bottom:8px;">Inscription d'un apprenant</h3>
               <p style="margin-bottom:24px;font-size:0.95rem;">Remplissez ce formulaire pour inscrire votre enfant. Nous vous contacterons sous 24h pour confirmer le rendez-vous.</p>
               <div class="alert" role="alert"></div>
               <form
@@ -120,12 +120,12 @@
                 </div>
                 <div class="form-row">
                   <div class="form-group">
-                    <label for="eleve-prenom">Nom de l'élève <span class="req">*</span></label>
-                    <input type="text" id="eleve-prenom" name="Nom de l'élève" class="form-control" placeholder="Ex : Kouamé Luc" required />
+                    <label for="eleve-prenom">Nom de l'apprenant <span class="req">*</span></label>
+                    <input type="text" id="eleve-prenom" name="Nom de l'apprenant" class="form-control" placeholder="Ex : Kouamé Luc" required />
                   </div>
                   <div class="form-group">
-                    <label for="eleve-classe">Classe de l'élève <span class="req">*</span></label>
-                    <select id="eleve-classe" name="Classe de l'élève" class="form-control" required>
+                    <label for="eleve-classe">Classe de l'apprenant <span class="req">*</span></label>
+                    <select id="eleve-classe" name="Classe de l'apprenant" class="form-control" required>
                       <option value="">Sélectionner une classe</option>
                       <option>CP1 / CP2</option>
                       <option>CE1 / CE2</option>
@@ -168,7 +168,7 @@
                 </div>
                 <div class="form-group">
                   <label for="message-parent">Message ou informations complémentaires</label>
-                  <textarea id="message-parent" name="Message du parent" class="form-control" rows="4" placeholder="Décrivez brièvement les difficultés observées chez l'élève..."></textarea>
+                  <textarea id="message-parent" name="Message du parent" class="form-control" rows="4" placeholder="Décrivez brièvement les difficultés observées chez l'apprenant..."></textarea>
                 </div>
                 <div class="form-submit-row">
                   <p class="form-note">🔒 Vos données sont confidentielles et ne seront pas partagées.</p>
@@ -187,7 +187,7 @@
                   <div class="c-icon">📍</div>
                   <div>
                     <div class="c-label">Adresse principale</div>
-                    <div class="c-value">Yopougon, Abidjan<br>Côte d'Ivoire</div>
+                    <div class="c-value"><a href="https://goo.gl/maps/KKKTiZQKaQiwZo1o8" target="_blank" rel="noopener" style="color:inherit;">Yopougon, Abidjan<br>Côte d'Ivoire</a></div>
                   </div>
                 </div>
                 <div class="contact-item">
@@ -242,7 +242,7 @@
                     <div class="pm-num">3</div>
                     <div>
                       <strong>Dépistage initial</strong>
-                      <p style="font-size:0.85rem;margin-top:2px;">Première séance d'évaluation pour établir le profil de l'élève.</p>
+                      <p style="font-size:0.85rem;margin-top:2px;">Première séance d'évaluation pour établir le profil de l'apprenant.</p>
                     </div>
                   </div>
                   <div class="pm-step" style="border:none;">
@@ -264,7 +264,7 @@
 
             <div class="contact-form fade-in">
               <h3 style="color:var(--primary);margin-bottom:8px;">Demande de devis — Établissement scolaire</h3>
-              <p style="margin-bottom:24px;font-size:0.95rem;">Remplissez ce formulaire pour obtenir un devis personnalisé pour votre établissement. Minimum <strong>50 élèves</strong> par classe requis.</p>
+              <p style="margin-bottom:24px;font-size:0.95rem;">Remplissez ce formulaire pour obtenir un devis personnalisé pour votre établissement. Minimum <strong>50 apprenants</strong> par classe requis.</p>
               <div class="alert" role="alert"></div>
               <form
                 action="https://formspree.io/f/xaqanjoa"
@@ -299,8 +299,8 @@
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="school-students">Nombre d'élèves concernés <span class="req">*</span></label>
-                    <input type="number" id="school-students" name="Nombre d'élèves concernés" class="form-control" placeholder="Minimum 50 élèves" min="1" required />
+                    <label for="school-students">Nombre d'apprenants concernés <span class="req">*</span></label>
+                    <input type="number" id="school-students" name="Nombre d'apprenants concernés" class="form-control" placeholder="Minimum 50 apprenants" min="1" required />
                     <span id="students-error" style="display:block;font-size:0.78rem;color:#dc3545;margin-top:4px;"></span>
                   </div>
                 </div>
@@ -323,7 +323,7 @@
                   <textarea id="school-message" name="Informations complémentaires" class="form-control" rows="4" placeholder="Niveaux concernés, contraintes horaires, objectifs pédagogiques..."></textarea>
                 </div>
                 <div class="form-submit-row">
-                  <p class="form-note">⚠ Minimum 50 élèves requis par classe constituée.</p>
+                  <p class="form-note">⚠ Minimum 50 apprenants requis par classe constituée.</p>
                   <button type="submit" class="btn btn-primary btn-lg">
                     📋 Envoyer la demande de devis
                   </button>
@@ -345,14 +345,14 @@
                   <div class="c-icon">👥</div>
                   <div>
                     <div class="c-label">Effectif requis</div>
-                    <div class="c-value">50 élèves minimum par classe</div>
+                    <div class="c-value">50 apprenants minimum par classe</div>
                   </div>
                 </div>
                 <div class="contact-item">
                   <div class="c-icon">🎓</div>
                   <div>
                     <div class="c-label">Formateurs déployés</div>
-                    <div class="c-value">2 formateurs si + de 60 élèves</div>
+                    <div class="c-value">2 formateurs si + de 60 apprenants</div>
                   </div>
                 </div>
                 <div class="contact-item">
@@ -436,8 +436,19 @@
                   <div class="c-icon">📍</div>
                   <div>
                     <div class="c-label">Siège social</div>
-                    <div class="c-value">Yopougon, Abidjan<br>Côte d'Ivoire</div>
+                    <div class="c-value"><a href="https://goo.gl/maps/KKKTiZQKaQiwZo1o8" target="_blank" rel="noopener" style="color:inherit;">Yopougon, Abidjan<br>Côte d'Ivoire</a></div>
                   </div>
+                </div>
+                <!-- Map embed -->
+                <div style="margin-top:16px;border-radius:var(--radius);overflow:hidden;">
+                  <iframe
+                    src="https://maps.google.com/maps?q=Yopougon,+Abidjan,+C%C3%B4te+d%27Ivoire&output=embed"
+                    width="100%" height="220" style="border:0;display:block;" allowfullscreen
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    title="Localisation Cabinet Orochi"></iframe>
+                </div>
+                <div style="margin-top:12px;text-align:center;">
+                  <a href="https://goo.gl/maps/KKKTiZQKaQiwZo1o8" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">📍 Voir sur Google Maps</a>
                 </div>
                 <div class="contact-item">
                   <div class="c-icon">📞</div>
@@ -522,7 +533,7 @@
       <div class="container">
         <div class="footer-grid">
           <div>
-            <a href="index.html" class="logo"><img src="assets/images/logo.jpeg" alt="Cabinet Orochi" style="height:44px;width:auto;border-radius:6px;" /></a>
+            <a href="index.html" class="logo"><img src="assets/images/logo-new.jpg" alt="Cabinet Orochi" style="height:64px;width:auto;border-radius:6px;" /></a>
             <p class="footer-desc">Centre de formation éducatif spécialisé dans le dépistage des lacunes scolaires et l'accompagnement pédagogique des apprenants en Côte d'Ivoire.</p>
                         <div class="footer-social">
               <a href="https://www.facebook.com/cabinetoroochi" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook" title="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
@@ -694,5 +705,10 @@
         if (panel) panel.classList.add('active');
       }
     </script>
+      <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/2250768912717" target="_blank" rel="noopener"
+       class="whatsapp-float" aria-label="Contacter sur WhatsApp" title="WhatsApp">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
   </body>
 </html>

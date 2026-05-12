@@ -65,14 +65,14 @@
     if (students < MIN_STUDENTS) {
       studentsInput.classList.add('is-invalid');
       if (studentsError) {
-        studentsError.textContent = `⚠ Minimum requis : ${MIN_STUDENTS} élèves par classe. Vous avez saisi ${students}.`;
+        studentsError.textContent = `⚠ Minimum requis : ${MIN_STUDENTS} apprenants par classe. Vous avez saisi ${students}.`;
       }
     } else {
       studentsInput.classList.add('is-valid');
       if (students > CLASS_SPLIT_THRESHOLD && formersNote) {
         const nbClasses = getNbClasses(students);
         formersNote.innerHTML = `
-          <strong>⚠ Règle 60+ élèves appliquée :</strong> Avec ${students} élèves,
+          <strong>⚠ Règle 60+ apprenants appliquée :</strong> Avec ${students} apprenants,
           <strong>2 formateurs</strong> sont requis.
           ${nbClasses} classe(s) de ${CLASS_SPLIT_SIZE} apprenants seront constituées.
         `;
@@ -128,7 +128,7 @@
           <strong>${pricing.label}</strong>
         </div>
         <div class="summary-row">
-          <span>Nombre d'élèves</span>
+          <span>Nombre d'apprenants</span>
           <strong>${students}</strong>
         </div>
         <div class="summary-row">
@@ -140,17 +140,17 @@
           <strong>${nbFormateurs} formateur(s)</strong>
         </div>
         <div class="summary-row">
-          <span>Inscription / élève</span>
+          <span>Inscription / apprenant</span>
           <strong>${formatCFA(pricing.inscription)}</strong>
         </div>
         ${pricing.seance ? `
         <div class="summary-row">
-          <span>Coût par séance / élève</span>
+          <span>Coût par séance / apprenant</span>
           <strong>${formatCFA(pricing.seance)}</strong>
         </div>
         <div class="summary-row">
           <span>Démarrage (inscription + 4 séances)</span>
-          <strong>${formatCFA(pricing.inscription + pricing.seance * 4)} / élève</strong>
+          <strong>${formatCFA(pricing.inscription + pricing.seance * 4)} / apprenant</strong>
         </div>` : ''}
         <div class="summary-row highlight">
           <span>Coût total au démarrage</span>
@@ -183,7 +183,7 @@
 
     if (students < MIN_STUDENTS) {
       if (studentsError) {
-        studentsError.textContent = `⚠ Impossible de soumettre : minimum ${MIN_STUDENTS} élèves requis.`;
+        studentsError.textContent = `⚠ Impossible de soumettre : minimum ${MIN_STUDENTS} apprenants requis.`;
       }
       studentsInput.focus();
       return;

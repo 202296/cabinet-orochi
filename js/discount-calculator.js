@@ -16,7 +16,7 @@
       {
         id: 'depistage', icon: '🔍', label: 'Dépistage des lacunes',
         inscription: 3000, seance: null, nbSeances: 1, transport: 0,
-        desc: 'Évaluation initiale des lacunes scolaires de l\'élève.',
+        desc: 'Évaluation initiale des lacunes scolaires de l\'apprenant.',
         discount: false
       },
       {
@@ -28,7 +28,7 @@
       {
         id: 'conference', icon: '🎤', label: 'Conscientisation (conférence)',
         inscription: 2500, seance: null, nbSeances: 1, transport: 0,
-        desc: 'Conférence de sensibilisation pour l\'élève et la famille.',
+        desc: 'Conférence de sensibilisation pour l\'apprenant et la famille.',
         discount: false
       },
       {
@@ -79,19 +79,19 @@
       {
         id: 'bilan', icon: '📋', label: 'Bilan de conscience',
         inscription: 20000, inscriptionExtra: 10000, seance: null, nbSeances: 2, transport: 5000,
-        desc: 'Bilan approfondi à domicile (+ 10.000 FCFA / élève supplémentaire).',
+        desc: 'Bilan approfondi à domicile (+ 10.000 FCFA / apprenant supplémentaire).',
         discount: false
       },
       {
         id: 'conference', icon: '🎤', label: 'Conscientisation (conférence)',
         inscription: 30000, inscriptionExtra: 15000, seance: null, nbSeances: 1, transport: 10000,
-        desc: 'Conférence à domicile (+ 15.000 FCFA / élève supplémentaire).',
+        desc: 'Conférence à domicile (+ 15.000 FCFA / apprenant supplémentaire).',
         discount: false
       },
       {
         id: 'techniques', icon: '📅', label: 'Techniques d\'étude & Emploi du temps',
         inscription: 30000, inscriptionExtra: 15000, seance: null, nbSeances: 2, transport: 5000,
-        desc: 'Formation méthodes à domicile (+ 15.000 FCFA / élève supplémentaire).',
+        desc: 'Formation méthodes à domicile (+ 15.000 FCFA / apprenant supplémentaire).',
         discount: false
       },
       {
@@ -123,19 +123,19 @@
       {
         id: 'bilan', icon: '📋', label: 'Bilan de conscience',
         inscription: 30000, inscriptionExtra: 15000, seance: null, nbSeances: 2, transport: 10000,
-        desc: 'Bilan à domicile (+ 15.000 FCFA / élève supplémentaire).',
+        desc: 'Bilan à domicile (+ 15.000 FCFA / apprenant supplémentaire).',
         discount: false
       },
       {
         id: 'conference', icon: '🎤', label: 'Conscientisation (conférence)',
         inscription: 50000, inscriptionExtra: 25000, seance: null, nbSeances: 1, transport: 20000,
-        desc: 'Conférence à domicile (+ 25.000 FCFA / élève supplémentaire).',
+        desc: 'Conférence à domicile (+ 25.000 FCFA / apprenant supplémentaire).',
         discount: false
       },
       {
         id: 'techniques', icon: '📅', label: 'Techniques d\'étude & Emploi du temps',
         inscription: 50000, inscriptionExtra: 25000, seance: null, nbSeances: 2, transport: 10000,
-        desc: 'Formation méthodes (+ 25.000 FCFA / élève supplémentaire).',
+        desc: 'Formation méthodes (+ 25.000 FCFA / apprenant supplémentaire).',
         discount: false
       },
       {
@@ -196,8 +196,8 @@
                 <span class="price-amount">${new Intl.NumberFormat('fr-FR').format(s.inscription)}</span>
                 <span class="price-currency">FCFA</span>
               </div>
-              ${s.inscriptionNonEleve ? `<div class="price-secondary">Non-élève : <strong>${fmt(s.inscriptionNonEleve)}</strong></div>` : ''}
-              ${s.inscriptionExtra ? `<div class="price-secondary">+ ${fmt(s.inscriptionExtra)} / élève supp.</div>` : ''}
+              ${s.inscriptionNonEleve ? `<div class="price-secondary">Non-apprenant : <strong>${fmt(s.inscriptionNonEleve)}</strong></div>` : ''}
+              ${s.inscriptionExtra ? `<div class="price-secondary">+ ${fmt(s.inscriptionExtra)} / apprenant supp.</div>` : ''}
             </div>` : ''}
 
             <div class="pricing-details">
@@ -218,11 +218,11 @@
               </div>` : ''}
               ${s.seanceEleve ? `
               <div class="pricing-detail-item">
-                <span class="d-label">Séance (élève)</span>
+                <span class="d-label">Séance (apprenant)</span>
                 <span class="d-value">${fmt(s.seanceEleve)}</span>
               </div>
               <div class="pricing-detail-item">
-                <span class="d-label">Séance (non-élève)</span>
+                <span class="d-label">Séance (non-apprenant)</span>
                 <span class="d-value">${fmt(s.seanceNonEleve)}</span>
               </div>` : ''}
             </div>

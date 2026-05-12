@@ -19,29 +19,41 @@
   /* ---- Mobile Menu ---- */
   const hamburger = document.querySelector('.hamburger');
   const mobileMenu = document.querySelector('.mobile-menu');
-  const mobileClose = document.querySelector('.mobile-menu-close');
 
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', () => {
+  function openMenu() {
+    if (mobileMenu) {
       mobileMenu.classList.add('open');
       document.body.style.overflow = 'hidden';
-    });
+    }
   }
-  if (mobileClose && mobileMenu) {
-    mobileClose.addEventListener('click', () => {
+  function closeMenu() {
+    if (mobileMenu) {
       mobileMenu.classList.remove('open');
       document.body.style.overflow = '';
-    });
+    }
   }
-  // Close on overlay link click
-  if (mobileMenu) {
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        document.body.style.overflow = '';
-      });
-    });
+
+  if (hamburger) {
+    hamburger.addEventListener('click', openMenu);
   }
+
+  // Use event delegation on document so close button always works
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('.mobile-menu-close')) {
+      closeMenu();
+    }
+    // Close on overlay link click
+    if (e.target.closest('.mobile-menu a')) {
+      closeMenu();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('open')) {
+      closeMenu();
+    }
+  });
 
   /* ---- Active Nav Link ---- */
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
@@ -186,11 +198,7 @@
     }
   });
 
-  /* ---- Whatsapp float button pulse ---- */
-  const waBtn = document.querySelector('.whatsapp-float');
-  if (waBtn) {
-    setTimeout(() => waBtn.classList.add('pulse'), 3000);
-  }
+  /* ---- Whatsapp float button (pulse handled by CSS) ---- */
 
   /* ---- Back to top ---- */
   const backTop = document.querySelector('.back-to-top');
