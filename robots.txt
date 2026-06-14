@@ -7,4 +7,4 @@ Disallow: /data/
 Disallow: /backups/
 Disallow: /.vscode/
 
-Sitemap: https://www.cabinetoroochi.ci/sitemap.xml
+Sitemap: https://www.cabinetorochi.net/sitemap.xml
